@@ -8,25 +8,22 @@ hero_img: /_assets/img/blog/2023/tax_exempt_cover.png
 
 ![](/_assets/img/blog/2023/tax_exempt_irs.png)
 
-We're officially a 501c3 nonprofit!!!
+We're thrilled to announce that we're now officially a 501c3 nonprofit!
 
-Thank you to everyone who has made this possible! Totally didn't expect to start a nonprofit with Tampa Devs but here we are!!
+A heartfelt thank you goes out to each and every one of you who played a part in making this a reality. We never anticipated establishing a nonprofit with Tampa Devs, yet here we are!
 
-We submitted our application status on 11/15/22 last year, and got the approvals way sooner than expected!
+We filed our application on November 15, 2022, and to our pleasant surprise, received approval much sooner than expected!
 
-Being a 501c3 nonprofit for Tampa Devs has many advantages. 
+Being a 501c3 nonprofit opens up a wealth of opportunities for Tampa Devs.
 
-One of those advantages is being able to do tax-write offs as a donor or company
+One key advantage is that donors and companies can now enjoy tax write-offs when they support us. Additionally, we can now apply more easily for government grants. This funding will enable us to host larger scale events such as hackathons and engaging workshops that we've planned for later this year.
 
-Another advantage is we can apply for government grant funding easier for expensive things like hackathon and other fun workshops we have planned later this year
-we get cheaper (and free!) SaaS tools, usually 15% discount on most things across the board. Including Gsuite, shopify, google/azure credit, tech soup, etc. These help organize and provide better community tools as a whole
+Moreover, as a nonprofit, we have access to discounts (sometimes even freebies!) on a wide range of SaaS tools. We're talking about a potential 15% off across the board, which includes heavy hitters like GSuite, Shopify, Google/Azure credit, TechSoup, and more. These tools will greatly enhance our community organizing capabilities and overall productivity.
 
-Lastly, can apply for a tax-exemption form, so don’t have to pay taxes on things like merchandise and possibly? food
+On top of all that, we're eligible to apply for a tax exemption form, which could mean no taxes on items like merchandise and, perhaps, even food.
 
-This overall let's us 
+In essence, our new status empowers us to do more, and to do it more effectively. This propels us closer to the objectives outlined in our mission statement and values.
 
-More to come on updates at our next meetup!
-
-Basically everything that we set out in our mission statement/values is easier to do/achieve now
+Stay tuned for more exciting updates at our next meetup! Achieving our nonprofit status marks just the beginning of our journey, and we can't wait to see where it leads us.
 
 ![](/_assets/img/blog/2023/ourvision_ourimpact.png)
