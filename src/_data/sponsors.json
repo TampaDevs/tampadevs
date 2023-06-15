@@ -2,47 +2,53 @@
   {
     "name": "Brooksource",
     "logo": "brooksource.png",
-    "href": "https://www.brooksource.com/"
+    "href": "https://www.brooksource.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor"
   },
   {
     "name": "Embarc Collective",
     "logo": "embarc_logo.svg",
-    "href": "https://www.embarccollective.com/",
+    "href": "https://www.embarccollective.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "none"
   },
   {
     "name": "PwC",
     "logo": "PwC-logo.svg",
-    "href": "https://www.pwc.com/",
+    "href": "https://www.pwc.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "none"
   },
   {
     "name": "Reliaquest",
     "logo": "reliaquest.svg",
-    "href": "https://www.reliaquest.com/",
+    "href": "https://www.reliaquest.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "none"
   },
   {
     "name": "USF College of Engineering",
     "logo": "usf-engineering-logo.png",
-    "href": "https://www.usf.edu/engineering/"
+    "href": "https://www.usf.edu/engineering/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor"
   },
   {
     "name": "Ace Host",
     "logo": "ace_host.png",
-    "href": "https://www.acehost.com/",
+    "href": "https://www.acehost.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "gold"
   },
   {
     "name": "Donut",
     "logo": "donut_app_150.png",
-    "href": "https://www.donut.com/",
+    "href": "https://www.donut.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
+    "type": "silver"
+  },
+  {
+    "name": "redirect.pizza",
+    "logo": "redirect_pizza.svg",
+    "href": "https://redirect.pizza/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "silver"
   },
   {
     "name": "Hillsborough County",
     "logo": "hcc_logo.png",
-    "href": "https://www.hillsboroughcounty.org/en",
+    "href": "https://www.hillsboroughcounty.org/en?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
     "type": "gold"
   }
 ]
