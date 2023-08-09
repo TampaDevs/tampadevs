@@ -147,6 +147,10 @@
 .donor-container {
   .donor-block {
     background-color: rgb(230, 230, 230);
+
+    iframe {
+      height: auto;
+    }
   }
 }
 
