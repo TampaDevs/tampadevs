@@ -32,37 +32,9 @@ Check out our past [talks](https://tampadevs.com/talks) for inspiration
 
 And upcoming events [here](https://www.meetup.com/tampadevs/events/) for reference
 
-## Are you interested?
+## Speak at Tampa Devs
 
-If your interested in these things, here's how to get started. We'll need a few things from you, these are for posting to the meetup event for advertising
+We'd love to host your talk! If you're interested, you can:
 
-- A talk title
-- What the talk is about
-- A speaker bio about yourself
-
-Feel free to check out some of our past meetup pages as an [example](https://www.meetup.com/tampadevs/events/285107030/)
-
-![Image description](/_assets/img/pages/talk1.webp)
-
-## How to get involved
-
-Hit up one of the organizers on slack if you'd like to get involved
-
-A link to the slack is found [here](https://join.slack.com/t/tampa-devs/shared_invite/zt-veftezkg-kq~jFtC1FCz4o6suybMl5Q)
-
-Also use the form below as well:
-
-<form class="formspree" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xnqrqdqe" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    <label for="phone-number">Phone Number</label>
-    <input type="text" name="phone-number" id="phone-number" placeholder="813-222-2222" required="">
-    <label for="message">Message</label>
-    <textarea rows="5" name="message" id="message" placeholder="Tell us more about yourself and the talk idea you have in mind! A draft is okay here" required=""></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-  </fieldset>
-  <input type="submit" value="Submit">
-</form>
+- Submit a talk on [Sessionize](https://go.tampa.dev/speak)
+- Reach out to us via email at [speakers@tampadevs.com](mailto:speakers@tampadevs.com)
