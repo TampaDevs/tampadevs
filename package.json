@@ -12,7 +12,7 @@
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "aos": "^2.3.4",
-    "clean-css": "^5.3.1",
+    "clean-css": "^5.3.3",
     "cssesc": "^3.0.0",
     "dayjs": "^1.11.7",
     "memfs": "^3.4.13",
