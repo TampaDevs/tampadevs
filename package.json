@@ -12,7 +12,7 @@
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "aos": "^2.3.4",
-    "clean-css": "^5.3.1",
+    "clean-css": "^5.3.3",
     "cssesc": "^3.0.0",
     "dayjs": "^1.11.7",
     "memfs": "^3.4.13",
@@ -24,13 +24,13 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.20.2",
     "axios": "^1.6.1",
     "babel-loader": "^9.1.2",
     "markdown-it": "^13.0.1",
     "require-dir": "^1.2.0",
     "svg-sprite": "^2.0.3",
-    "url-slug": "^3.0.4"
+    "url-slug": "^4.0.1"
   }
 }
