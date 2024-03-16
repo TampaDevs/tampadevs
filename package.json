@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.20.2",
     "axios": "^1.6.1",
     "babel-loader": "^9.1.2",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.0.0",
     "require-dir": "^1.2.0",
     "svg-sprite": "^2.0.3",
     "url-slug": "^4.0.1"
