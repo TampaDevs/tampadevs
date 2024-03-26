@@ -1,7 +1,9 @@
+@use "variables";
+
 .time-list {
   margin: 0;
   padding: 0;
-  color: $colorBlue;
+  color: variables.$colorBlue;
 
   li {
     display: grid;

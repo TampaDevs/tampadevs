@@ -1,6 +1,8 @@
+@use "../variables";
+@use "../utilities";
 .textcol {
 
-  @include bpMinXSmall() {
+  @include utilities.bpMinXSmall() {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -19,12 +21,12 @@
       }
 
       &:first-child{
-        border-right: 1px solid $colorGreen;
+        border-right: 1px solid variables.$colorGreen;
         padding-right: 25px;
       }
 
       &:last-child {
-        border-left: 1px solid $colorGreen;
+        border-left: 1px solid variables.$colorGreen;
         padding-left: 25px;
       }
 

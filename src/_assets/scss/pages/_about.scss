@@ -1,18 +1,19 @@
-@use "../mixin-mediaqueries" as media;
+@use "../variables";
+@use "../utilities";
 .td-about {
   h2 {
     font-size: 30px;
   }
   .btn {
     font: 400 1rem/1.1 "Montserrat", Helvetica, Arial, Lucida, sans-serif;
-    border: solid $colorGreen 2px;
+    border: solid variables.$colorGreen 2px;
     border-radius: 5px;
     background: transparent;
-    color: $colorGreen;
+    color: variables.$colorGreen;
     transition: transform 200ms ease-in-out, color 200ms ease-in-out, background-color 200ms ease-in-out;
     &:hover {
-      border: solid darken($colorGreen, 5%) 2px;
-      background: darken($colorGreen, 5%);
+      border: solid darken(variables.$colorGreen, 5%) 2px;
+      background: darken(variables.$colorGreen, 5%);
       color: #fafafa;
     }
   }
@@ -63,10 +64,10 @@
   &-team-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    @include bpMinXSmall {
+    @include utilities.bpMinXSmall {
       grid-template-columns: repeat(2, 1fr);
     }
-    @include bpMinLarge {
+    @include utilities.bpMinLarge {
       grid-template-columns: repeat(3, 1fr);
     }
     grid-column-gap: 0;
@@ -89,7 +90,7 @@
       transition: 200ms;
       .btn {
         margin-block-start: 1rem;
-        @include bpMinMedium {
+        @include utilities.bpMinMedium {
           @media (hover: hover) {
             z-index: -1;
             transform: translateY(-60px);
@@ -116,7 +117,7 @@
       .person {
         &-name, {
           margin-bottom: 8px;
-          color: $colorBlue;
+          color: variables.$colorBlue;
           border: none;
           a {
             @extend .person-name;
@@ -124,7 +125,7 @@
         }
         &-title {
           font: 700 0.8rem/1.5 "Montserrat", Helvetica, Arial, Lucida, sans-serif;
-          color: $colorOrange;
+          color: variables.$colorOrange;
         }
         &-bio {
           margin: 0px;
@@ -134,7 +135,7 @@
           flex-shrink: 0;
           flex-direction: row;
           font: 400 0.8rem/1.5 "Montserrat", Helvetica, Arial, Lucida, sans-serif;
-          @include bpMinMedium {
+          @include utilities.bpMinMedium {
             @media (hover: hover) {
               height: 0;
               z-index: -1;
@@ -348,7 +349,7 @@
   + .td-newsletter {
     margin: 0
   }
-  @include bpMinXSmall() {
+  @include utilities.bpMinXSmall() {
     &-header {
       &-txt-overlay {
         top: initial;
@@ -372,7 +373,7 @@
       }
     }
   }
-  @include bpMinSmall() {
+  @include utilities.bpMinSmall() {
     &-header {
       display: flex;
       position: relative;
@@ -401,7 +402,7 @@
       }
     }
   }
-  @include bpMinMedium() {
+  @include utilities.bpMinMedium() {
     &-header {
       display: flex;
       position: relative;
@@ -427,7 +428,7 @@
       }
     }
   }
-  @include bpMinLarge() {
+  @include utilities.bpMinLarge() {
     &-header {
       &-img-wrapper {
         width: 80vw;

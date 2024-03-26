@@ -1,3 +1,6 @@
+@use "variables";
+@use "utilities";
+
 .td-alert-banner {
   display: block;
   background-color: rgb(238, 92, 83);
@@ -82,12 +85,12 @@
     &__gold,
     &__plat {
       .sponsor-item {
-        @include bpMaxXSmall() {
+        @include utilities.bpMaxXSmall() {
           width: 100%;
           margin-right: 0;
         }
         width: calc(50% - 2px);
-        @include bpMinXSmall() {
+        @include utilities.bpMinXSmall() {
           padding: 30px;
           &:nth-child(odd) {
             margin-right: 4px;
@@ -97,13 +100,13 @@
     }
     &__silver {
       .sponsor-item {
-        @include bpMaxXSmall() {
+        @include utilities.bpMaxXSmall() {
           &:nth-child(odd) {
             margin-right: 4px;
           }
         }
         width: calc(50% - 2px);
-        @include bpMinXSmall() {
+        @include utilities.bpMinXSmall() {
           padding: 15px;
           margin-right: 4px;
           width: calc(33.33% - 2.66px);
@@ -136,13 +139,13 @@
   .sponsor-button {
     width: 100%;
     margin-right: 0;
-    @include bpMinXSmall() {
+    @include utilities.bpMinXSmall() {
       width: calc(50% - 16px);
       &:nth-child(odd) {
         margin-right: 32px;
       }
     }
-    // @include bpMinXSmall() {
+    // @include utilities.bpMinXSmall() {
     //   padding: 15px;
     //   margin-right: 4px;
     //   width: calc(33.33% - 2.66px);

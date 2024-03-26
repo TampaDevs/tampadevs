@@ -1,3 +1,5 @@
+@use "variables";
+
 .btn {
   width: 200px;
   display: inline-block;
@@ -10,35 +12,35 @@
 
   &--white-outline {
     border: 1px solid white;
-    color: $colorOrange;
+    color: variables.$colorOrange;
 
     &:hover {
-      border: 1px solid $colorBlue;
-      color: $colorBlue;
+      border: 1px solid variables.$colorBlue;
+      color: variables.$colorBlue;
     }
   }
 
   &--green {
-    background: $colorGreen;
+    background: variables.$colorGreen;
     color: white;
-    border: 1px solid $colorGreen;
+    border: 1px solid variables.$colorGreen;
 
     &:hover {
       background: transparent;
-      color: $colorGreen;
-      border: 1px solid $colorGreen;
+      color: variables.$colorGreen;
+      border: 1px solid variables.$colorGreen;
     }
   }
 
   &--orange {
-    background: $colorOrange;
+    background: variables.$colorOrange;
     color: white;
-    border: 1px solid $colorOrange;
+    border: 1px solid variables.$colorOrange;
 
     &:hover {
       background: transparent;
-      color: $colorOrange;
-      border: 1px solid $colorOrange;
+      color: variables.$colorOrange;
+      border: 1px solid variables.$colorOrange;
     }
   }
 

@@ -1,5 +1,8 @@
+@use "variables";
+@use "utilities";
+
 .td-nav {
-  background-color: $colorBlue;
+  background-color: variables.$colorBlue;
   color: white;
   font-size: 14px;
   line-height: 20px;
@@ -28,7 +31,7 @@
     transition: color 0.2s;
 
     &:hover {
-      color: $colorGreen;
+      color: variables.$colorGreen;
     }
   }
 
@@ -42,7 +45,7 @@
     padding: 10px;
 
     &:hover {
-      color: $colorGreen;
+      color: variables.$colorGreen;
     }
   }
 
