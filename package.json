@@ -17,14 +17,14 @@
     "dayjs": "^1.11.11",
     "memfs": "^4.9.2",
     "moveto": "^1.8.2",
-    "sass": "^1.75.0",
+    "sass": "^1.76.0",
     "sharp": "^0.33.3",
     "tiny-slider": "^2.9.4",
     "webpack": "^5.91.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@babel/core": "^7.24.4",
+    "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.4",
     "axios": "^1.6.8",
     "babel-loader": "^9.1.3",
