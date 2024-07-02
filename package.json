@@ -20,7 +20,7 @@
     "sass": "^1.77.6",
     "sharp": "^0.33.4",
     "tiny-slider": "^2.9.4",
-    "webpack": "^5.91.0"
+    "webpack": "^5.92.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
