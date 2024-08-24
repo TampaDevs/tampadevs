@@ -1,31 +1,25 @@
 [
   {
-    "name": "Vincent Tang",
-    "team": ["Team Core", "Speaker", "Organizers"],
-    "title": "Founder of Tampa Devs",
-    "bio": "Occasional Dance Performer. Runs CodeChefs, a coding podcast for junior devs.",
+    "name": "Matthew Yorkgitis",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
+    "title": "President",
+    "bio": "Executive level software engineer, manager, and strategist with a passion for leveraging technology to create more impactful businesses and supportive communities.",
+    "img": "matt_yorkgitis.jpg",
     "href": {
-      "type": "Website",
-      "url": "https://vincentntang.com"
+      "type": "LinkedIn",
+      "url": "https://www.linkedin.com/in/matthewyorkgitis/"
     },
-    "img": "vincent_tang.jpg",
     "order": 1
   },
   {
-    "name": "Charlton Trezevant",
-    "team": ["Team Core", "Speaker", "Organizers"],
-    "title": "Vice President of Tampa Devs",
-    "bio": "Cloud & Application Security consultant residing in St. Petersburg, Florida.",
-    "img": "charlton_trezevant.jpeg",
-    "href": {
-      "type": "Website",
-      "url": "https://blog.ctis.me/"
-    },
-    "order": 2
-  },  
-  {
-    "name": "Josef Siber",
-    "team": ["Team Core", "Organizers"],
+    "name": "Josef Sieber",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
     "title": "Program Manager",
     "bio": "Data Scientist, but still a big fan of gut hunches. Ad Hoc Statistician.",
     "img": "josef_siber.jpg",
@@ -33,62 +27,170 @@
       "type": "LinkedIn",
       "url": "https://www.linkedin.com/in/josef-sieber/"
     },
-    "order": 3
-  }, 
+    "order": 2
+  },
   {
-    "name": "Haritha Diraneyya",  
-    "team": ["Team Member", "Organizers"],
-    "title": "Master of Ceremonies",
+    "name": "Nelson Yee",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
+    "title": "Events Coordinator",
+    "bio": "Driven by a growth mindset, commitment to lifelong learning, and a profound appreciation for technology.",
+    "img": "nelson_yee.jpg",
+    "href": {
+      "type": "LinkedIn",
+      "url": "https://www.linkedin.com/in/nelyee/"
+    },
+    "order": 3
+  },
+  {
+    "name": "Justin Herron",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
+    "title": "Principal Architect, Tampa Devs Community Cloud",
+    "bio": "Ardent supporter of technology for social impact. Better hypotheses are found by steadily identifying and eliminating those that lead to contradictions.",
+    "img": "justin_herron.jpg",
+    "href": {
+      "type": "LinkedIn",
+      "url": "https://www.linkedin.com/in/desyncit/"
+    },
+    "order": 4
+  },
+  {
+    "name": "Manuel Osorio",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
+    "title": "Lead Open Source Maintainer",
+    "bio": "Full Stack JavaScript Developer with a passion for supporting Open Source. Primary maintainer of tampadevs.com.",
+    "img": "manuel_osorio.jpg",
+    "href": {
+      "type": "LinkedIn",
+      "url": "https://www.linkedin.com/in/manuel-osorio/"
+    },
+    "order": 5
+  },
+  {
+    "name": "Connor Tumbleson",
+    "team": [
+      "Team Core",
+      "Organizers"
+    ],
+    "title": "Open Source Maintainer",
+    "bio": "Engineer, Apktool Maintainer, PHP nerd.",
+    "img": "connor_tumbleson.jpg",
+    "href": {
+      "type": "LinkedIn",
+      "url": "https://www.linkedin.com/in/connortumbleson/"
+    },
+    "order": 6
+  },
+  {
+    "name": "Vincent Tang",
+    "team": [
+      "Team Core",
+      "Speaker",
+      "Organizers"
+    ],
+    "title": "Founder of Tampa Devs",
+    "bio": "Occasional Dance Performer. Runs CodeChefs, a coding podcast for junior devs.",
+    "href": {
+      "type": "Website",
+      "url": "https://vincentntang.com"
+    },
+    "img": "vincent_tang.jpg",
+    "order": 7
+  },
+  {
+    "name": "Charlton Trezevant",
+    "team": [
+      "Team Core",
+      "Speaker",
+      "Organizers"
+    ],
+    "title": "Co-Founder of Tampa Devs",
+    "bio": "Software engineer and business owner. Developer, tinkerer, and teacher.",
+    "img": "charlton_trezevant.jpeg",
+    "href": {
+      "type": "Website",
+      "url": "https://blog.ctis.me/"
+    },
+    "order": 8
+  },
+  {
+    "name": "Haritha Diraneyya",
+    "team": [
+      "Team Member",
+      "Organizers"
+    ],
+    "title": "Trustee",
     "bio": "Project Manager with experience shipping video games on Unity. Passionate about salsa dancing and frontend development.",
     "img": "haritha_diraneyya.png",
     "href": {
       "type": "LinkedIn",
       "url": "https://www.linkedin.com/in/haritha-diraneyya/"
     },
-    "order": 4
+    "order": 9
   },
   {
     "name": "Lydia Hendriks",
-    "team": ["Team Member", "Organizers"],
-    "title": "Community Engagement Lead",
+    "team": [
+      "Team Member"
+    ],
+    "title": "Leadership Team Alumni",
     "bio": "FS web developer using React + Node.js. Background in program coordination prior to switching to web. Passionate about improving people's lives through tech.",
     "img": "lydia_hendriks.jpg",
     "href": {
       "type": "Github",
       "url": "https://github.com/lhendriks1"
-    },
-    "order": 5
+    }
   },
   {
     "name": "Ryan Harrigan",
-    "team": ["Team Member"],
-    "title": "Master of Ceremonies",
+    "team": [
+      "Team Member"
+    ],
+    "title": "Leadership Team Alumni",
     "bio": "Project Manager with experience shipping video games on Unity. Passionate about salsa dancing and frontend development.",
     "img": "ryan_harrigan.png"
   },
   {
     "name": "Javi Carrion",
-    "team": ["Team Member"],
+    "team": [
+      "Team Member"
+    ],
     "img": "javi_carrion.jpg"
   },
   {
     "name": "Davindra Tulsi",
-    "team": ["Team Member"],
+    "team": [
+      "Team Member"
+    ],
     "img": "davindra_tulsi.jpg"
   },
   {
     "name": "Jonathan Li",
-    "team": ["Team Member"],
+    "team": [
+      "Team Member"
+    ],
     "img": "jonathan_li.jpg"
   },
   {
     "name": "German Gamboa",
-    "team": ["Team Member"],
+    "team": [
+      "Team Member"
+    ],
     "img": "german_gamboa.jpg"
   },
   {
     "name": "Amy Sliwinski",
-    "team": ["Team Member"],  
+    "team": [
+      "Team Member"
+    ],
     "img": "amy_sliwinski.jpg"
   }
 ]
