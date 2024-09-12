@@ -33,7 +33,7 @@ layout: layouts/base.njk
           <img src="/_assets/img/people/{{ person.img if person.img else " no-avatar.jpg" }}" alt="{{ person.name }}" class="td-blog__author__img">
             <p>
               {% if person.href %}
-                <a href="{{ person.href }}" target="_blank" rel="noopener">
+                <a href="{{ person.href.url }}" target="_blank" rel="noopener">
                 {% endif %}
                 {{ person.name }}
                 {% if person.href %}

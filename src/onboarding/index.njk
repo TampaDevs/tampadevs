@@ -29,7 +29,7 @@ aos: false
   <br></br>
 
   <section aria-labelledby="event-organizers" class="td-about-section organizers container">
-      <h2 id="event-organizers">Current Event Organizers</h2>
+      <h2 id="event-organizers">Current Team</h2>
       <div class="td-about-team-wrapper">
         {% for person in people | sort(false, false, 'order') %}
           {% if person.team.indexOf("Organizers") > -1 %}
