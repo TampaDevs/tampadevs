@@ -10,7 +10,7 @@
   "author": "Vincent Tang",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "aos": "^2.3.4",
     "clean-css": "^5.3.3",
     "cssesc": "^3.0.0",
