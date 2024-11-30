@@ -30,8 +30,8 @@ aos: false
         <p>Our organization strives to create unique opportunities for the local community to learn, grow, and succeed together. Whether you're a developer, student, technologist, or entrepreneur, our innovative partnerships with local Universities, non-profit tech institutes, and startup incubators mean there's something for everyone at Tampa Devs.</p>
       </div>
     </section>
-    <section aria-labelledby="event-organizers" class="td-about-section organizers container">
-      <h2 id="event-organizers">Our Team</h2>
+    <section aria-labelledby="our-team" class="td-about-section organizers container">
+      <h2 id="our-team">Our Team</h2>
       <div class="td-about-team-wrapper">
         {% for person in people | sort(false, false, 'order') %}
           {% if person.team.indexOf("Organizers") > -1 %}
