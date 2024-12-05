@@ -1,16 +1,18 @@
+@use "../variables";
+
 .text-color--black {
   color: black;
 }
 .text-color--green {
-  color: $colorGreen;
+  color: variables.$colorGreen;
 }
 
 // BG -color
 .bg--orange {
-  background-color: $colorOrange;
+  background-color: variables.$colorOrange;
 }
 .border--orange {
-  border: 1px solid $colorOrange
+  border: 1px solid variables.$colorOrange
 }
 
 
