@@ -1,5 +1,7 @@
+@use "../variables";
+
 .slider {
-  background-color: $colorGreen;
+  background-color: variables.$colorGreen;
   color: white;
 
   &__container {
