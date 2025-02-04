@@ -24,7 +24,7 @@ layout: layouts/base.njk
     <date>{{ date | readableDate }}</date>
   </header>
   <main class="td-blog__body">
-    {{ layoutContent | safe }}
+    {{ content | safe }}
   </main>
   {% if author %}
     {% for person in people | sort(false, false, 'name') %}
