@@ -7,7 +7,7 @@
     {% if nav %}
       {% include "blocks/nav.njk" %}
     {% endif %}
-    {{ layoutContent | safe }}
+    {{ content | safe }}
     {% block content %}{% endblock %}
 
     {% include "blocks/newsletter.njk" %}
