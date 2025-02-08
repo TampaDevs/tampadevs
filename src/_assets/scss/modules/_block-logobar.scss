@@ -1,5 +1,8 @@
+@use "../variables";
+@use "../text";
+
 .logobar {
-  background-color: $colorBlue;
+  background-color: variables.$colorBlue;
   color: white;
   padding: 25px 0;
   width: 100%;
