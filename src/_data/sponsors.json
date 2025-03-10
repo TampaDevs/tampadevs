@@ -64,9 +64,15 @@
     "type": "none"
   },
   {
+    "name": "xByte Technologies",
+    "logo": "xbyte_technologies.svg",
+    "href": "https://www.xbyte.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
+    "type": "gold"
+  },
+  {
     "name": "CodeBoxx",
     "logo": "codeboxx.png",
     "href": "https://www.academy.codeboxx.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
-    "type": "gold"
+    "type": "none"
   }
 ]
