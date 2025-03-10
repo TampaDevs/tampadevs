@@ -1,3 +1,6 @@
+@use "variables";
+@use "utilities";
+
 .heading {
   text-transform: uppercase;
   font-size: 34px;
@@ -5,15 +8,15 @@
   letter-spacing: 2px;
 
   &--green {
-    color: $colorGreen;
+    color: variables.$colorGreen;
   }
 
   &--blue {
-    color: $colorBlue;
+    color: variables.$colorBlue;
   }
 
   &--orange {
-    color: $colorOrange;
+    color: variables.$colorOrange;
   }
 
   &--centered {
@@ -34,7 +37,7 @@
       max-height: 600px;
       // width: 100%;
 
-      @include bpMinLarge() {
+      @include utilities.bpMinLarge() {
         max-width: 110%;
         width: 110%;
         margin-left: -5%;
@@ -61,11 +64,11 @@
 
   p,
   li {
-    color: $colorBlue;
+    color: variables.$colorBlue;
   }
 
   a {
-    color: $colorOrange;
+    color: variables.$colorOrange;
     overflow-wrap: break-word;
   }
 
@@ -81,7 +84,7 @@
   }
 
   blockquote {
-    border-left: 4px solid $colorBlue;
+    border-left: 4px solid variables.$colorBlue;
     padding-left: 20px;
     margin-left: 1px;
   }
@@ -89,8 +92,8 @@
   &__author {
     margin: 2em auto;
     padding: 2em 0;
-    border-top: 2px solid $colorOrange;
-    border-bottom: 2px solid $colorOrange;
+    border-top: 2px solid variables.$colorOrange;
+    border-bottom: 2px solid variables.$colorOrange;
     max-width: 720px;
     text-align: center;
 

@@ -1,3 +1,5 @@
+@use "../variables";
+@use "../utilities";
 .promo {
   background-position: center center;
   background-size: cover;
@@ -6,7 +8,7 @@
   width: 100%;
   color: white;
 
-  @include bpMinMedium() {
+  @include utilities.bpMinMedium() {
     margin-left: -20px;
     margin-right: -20px;
     width: calc(100% + 40px);
@@ -35,7 +37,7 @@
   padding-bottom: 50px;
   padding-left: 30px;
   padding-right: 30px;
-  @include bpMinXSmall() {
+  @include utilities.bpMinXSmall() {
     padding: 50px;
   }
   text-decoration: none;
@@ -68,7 +70,7 @@
   }
 
   &__title {
-    color: $colorOrange;
+    color: variables.$colorOrange;
     margin: 0;
   }
 }
@@ -95,7 +97,7 @@
 }
 .promo__content__button {
   color: white;
-  background-color: $colorOrange;
+  background-color: variables.$colorOrange;
   text-transform: uppercase;
   padding: 15px 17px;
   border-radius: 4px;
@@ -103,18 +105,18 @@
   align-items: center;
   justify-content: space-evenly;
   transition: background-color 0.2s;
-  @include bpMaxXSmall() {
+  @include utilities.bpMaxXSmall() {
     font-size: 18px;
     padding: 10px;
   }
 
   &:hover {
-    background-color: rgba($colorOrange, 0.5);
+    background-color: rgba(variables.$colorOrange, 0.5);
   }
 }
 .promo-container {
   margin-bottom: 70px !important;
-  @include bpMaxXSmall() {
+  @include utilities.bpMaxXSmall() {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
