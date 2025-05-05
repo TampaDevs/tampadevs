@@ -6,7 +6,10 @@ $breakpoints: (
 );
 
 @function bp($size) {
-  @return map-get($breakpoints, $size);
+  @if(map-has-key($breakpoints, $size)) {
+    @return map-get($breakpoints, $size);
+  }
+  @return $size;
 }
 
 @mixin bpMin($size) {
