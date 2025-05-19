@@ -37,7 +37,7 @@ layout: layouts/base.njk
   </section>
 
 <section class="container promo-container">
-  {{ layoutContent | safe }}
+  {{ content | safe }}
 </section>
 <div class="supporters-container">
   <section class="container sponsor-container mb--0">
@@ -46,7 +46,7 @@ layout: layouts/base.njk
     <div class="sponsor-list sponsor-list__gold">
       {% for sponsor in sponsors | sort(false, false, 'name') %}
         {% if sponsor.type == "gold" %}
-          <a href="{{ sponsor.href }}" class="sponsor-item" target="_blank" rel="”noopener" noreferrer”>
+          <a href="{{ sponsor.href }}" class="sponsor-item" target="_blank" rel="noopener">
             <img src="/_assets/misc/sponsors/{{ sponsor.logo }}" alt=""/>
           </a>
         {% endif %}
@@ -56,7 +56,7 @@ layout: layouts/base.njk
     <div class="sponsor-list sponsor-list__silver">
       {% for sponsor in sponsors | sort(false, false, 'name') %}
         {% if sponsor.type == "silver" %}
-          <a href="{{ sponsor.href }}" class="sponsor-item" target="_blank" rel="”noopener" noreferrer”>
+          <a href="{{ sponsor.href }}" class="sponsor-item" target="_blank" rel="noopener">
             <img src="/_assets/misc/sponsors/{{ sponsor.logo }}" alt=""/>
           </a>
         {% endif %}

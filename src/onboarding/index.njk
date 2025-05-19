@@ -8,7 +8,7 @@ aos: false
 {% block content %}
   <main class="container main-content td-about">
    <h1>{{onboarding.title}}</h1>
-  <section aria-labelledby="event-organizers" class="td-about-section organizers container">
+  <section class="td-about-section organizers container">
   <h3>{{onboarding.description}}</h3>
  <div class="container">
   <h3>{{onboarding.step1.title}}</h3>
@@ -28,8 +28,8 @@ aos: false
 </section>
   <br></br>
 
-  <section aria-labelledby="event-organizers" class="td-about-section organizers container">
-      <h2 id="event-organizers">Current Team</h2>
+  <section aria-labelledby="current-team" class="td-about-section organizers container">
+      <h2 id="current-team">Current Team</h2>
       <div class="td-about-team-wrapper">
         {% for person in people | sort(false, false, 'order') %}
           {% if person.team.indexOf("Organizers") > -1 %}
