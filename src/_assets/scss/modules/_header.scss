@@ -1,0 +1,122 @@
+@use "../variables";
+@use "../utilities";
+
+.td-header {
+  color: #ffffff;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 80vh;
+
+  h1, h2 {
+    color: inherit;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+  }
+
+  a {
+    color: #ffffff;
+  }
+
+  &__media {
+    display: block;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__container {
+    background-color: rgba(68, 77, 95, 0.5);
+    height: 100%;
+    position: absolute;
+    text-decoration: none;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__logoGroup {
+      @media (orientation: landscape) {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-align: left;
+        width: 100%;
+        h2 {
+          margin: 0;
+        }
+        
+        .td-header__logo {
+          margin: 0;
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 145px;
+    min-width: 75px;
+    margin: 20px 0;
+  }
+
+  &__cityName-svg {
+    margin: 20px 0;
+    max-width: 400px;
+    max-height: 50px;
+  }
+
+  &__ctas {
+    text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+      border: 1px solid variables.$colorOrange;
+      width: 200px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px 20px;
+      font-size: 1.35em;
+      transition: background-color 0.4s;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: rgba(238, 92, 83, 0.4);
+      &:hover {
+        background-color: variables.$colorOrange;
+      }
+      &:last-child {
+        border-color: variables.$colorGreen;
+        background-color: rgba(26, 172, 156, 0.4);
+      }
+      &:last-child:hover {
+        background-color: variables.$colorGreen;
+      }
+    }
+    &__meetup-lnk {
+      font-size: 1em;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+  }
+}

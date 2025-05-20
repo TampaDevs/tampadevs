@@ -1,8 +1,10 @@
+@use "../variables";
+
 .highlight-box {
   border-radius: 4px;
   padding: 10px;
   text-align: center;
-  background: rgba($colorBlue, .2);
+  background: rgba(variables.$colorBlue, .2);
 
   &__logo {
     max-width: 20%;
