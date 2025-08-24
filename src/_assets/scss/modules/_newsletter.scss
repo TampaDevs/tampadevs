@@ -1,0 +1,65 @@
+@use "../utilities";
+@use "../variables";
+.td-newsletter {
+  background-color: variables.$colorOrange;
+  color: white;
+  margin: 0;
+  padding: 50px 0 100px 0;
+  h2 {
+    color: #ffffff;
+  }
+
+  &__field {
+    display: block;
+    position: relative;
+    margin: 0 0 1em;
+    label {
+      display: block;
+      text-indent: -99999px;
+      font-size: 0;
+    }
+
+    input {
+      background-color: #cb4e47;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      font-size: 0.825em;
+
+      &::placeholder {
+        color: #d4d4d3;
+      }
+
+      &[type="submit"] {
+        background-color: #ffffff;
+        color: #566075;
+        text-transform: uppercase;
+        transition: all 0.4s;
+        border: 1px solid variables.$colorOrange;
+        cursor: pointer;
+      }
+
+      &[type="submit"]:hover {
+        background-color: variables.$colorOrange;
+        border-color: white;
+        color: white;
+      }
+
+
+    }
+  }
+  @include utilities.bpMin(800px) {
+    &__group {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 20px;
+    }
+
+    &__field {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}

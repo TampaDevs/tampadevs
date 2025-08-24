@@ -1,0 +1,53 @@
+@use "../variables";
+* {
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+html {
+  font-size: 100%;
+}
+
+
+body {
+  color: variables.$colorBlue;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+h1, h2 {
+  color: variables.$colorOrange;
+}
+a {
+  color: variables.$colorGreen;
+  text-decoration: none;
+  border-bottom: 1px solid variables.$colorOrange;
+  transition: border 0.5s;
+}
+
+p {
+  font-size: 1.1rem; // was 1 rem, may change back later
+  line-height: 1.725rem;
+}
+li {
+  font-size: 1.1rem;
+}
+
+textarea,
+select,
+input,
+button {
+  // outline: none;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+}
+
+a:hover {
+  border-bottom-color: variables.$colorGreen;
+}
+
+a:focus {
+  // outline: none;
+}
