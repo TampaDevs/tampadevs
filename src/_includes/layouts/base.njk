@@ -9,8 +9,9 @@
     {% endif %}
     {{ content | safe }}
     {% block content %}{% endblock %}
-
-    {% include "blocks/newsletter.njk" %}
+    {% if newsletter != false %}
+      {% include "blocks/newsletter.njk" %}
+    {% endif %}
     {% include "blocks/footer.njk" %}
     <script src="/_assets/js/main.js?v={{ data.buildRef }}"></script>
     {% block scripts %}{% endblock %}
