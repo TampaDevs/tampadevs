@@ -14,7 +14,7 @@
     "aos": "^2.3.4",
     "clean-css": "^5.3.3",
     "cssesc": "^3.0.0",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.18",
     "memfs": "^4.17.2",
     "moveto": "^1.8.2",
     "sass": "^1.91.0",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@babel/core": "^7.28.3",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-env": "^7.28.3",
     "axios": "^1.9.0",
     "babel-loader": "^10.0.0",
     "markdown-it": "^14.1.0",
