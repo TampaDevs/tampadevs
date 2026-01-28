@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tampadevs-com",
+  "main": "./workers/app.ts",
+  "compatibility_date": "2025-04-04",
+
+  // Domain routing
+  "routes": [
+    { "pattern": "tampadevs.com/*", "zone_name": "tampadevs.com" },
+    { "pattern": "www.tampadevs.com/*", "zone_name": "tampadevs.com" }
+  ],
+
+  // Auto-generate worker types
+  "wrangler_typegen": {
+    "outFile": "worker-configuration.d.ts"
+  },
+
+  // Observability
+  "observability": {
+    "enabled": true
+  }
+}
