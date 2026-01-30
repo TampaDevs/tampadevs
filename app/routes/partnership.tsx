@@ -23,7 +23,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   // Fetch member count from events API
   let memberCount = "3,000+";
   try {
-    const response = await fetch("https://events.api.tampa.dev/events/next?groups=tampadevs");
+    const response = await fetch("https://api.tampa.dev/events/next?groups=tampadevs");
     if (response.ok) {
       const events = await response.json();
       if (events.length > 0 && events[0].group?.memberCount) {

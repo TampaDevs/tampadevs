@@ -30,17 +30,17 @@ export async function loader({ context }: Route.LoaderArgs) {
     photo: `/images/people/${person.image}`,
     socials: person.href
       ? [
-          {
-            platform: (
-              person.href.type.toLowerCase() === "linkedin"
-                ? "linkedin"
-                : person.href.type.toLowerCase() === "twitter"
-                  ? "twitter"
-                  : "website"
-            ) as SocialLink["platform"],
-            url: person.href.url,
-          },
-        ]
+        {
+          platform: (
+            person.href.type.toLowerCase() === "linkedin"
+              ? "linkedin"
+              : person.href.type.toLowerCase() === "twitter"
+                ? "twitter"
+                : "website"
+          ) as SocialLink["platform"],
+          url: person.href.url,
+        },
+      ]
       : [],
   }));
 
@@ -59,7 +59,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   // Fetch member count from events API
   let memberCount = "3,000+"; // Fallback
   try {
-    const response = await fetch("https://events.api.tampa.dev/events/next?groups=tampadevs");
+    const response = await fetch("https://api.tampa.dev/events/next?groups=tampadevs");
     if (response.ok) {
       const events = await response.json();
       if (events.length > 0 && events[0].group?.memberCount) {
@@ -160,7 +160,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="https://tampa.dev/groups/tampa-devs"
+                  href="https://tampa.dev/groups/tampadevs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-coral text-white font-semibold rounded-xl hover:bg-coral-light transition-all shadow-lg shadow-coral/25 hover:shadow-xl hover:shadow-coral/30 hover:-translate-y-0.5"
@@ -402,7 +402,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
-                      href="https://tampa.dev/groups/tampa-devs"
+                      href="https://tampa.dev/groups/tampadevs"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-coral text-white font-semibold rounded-xl hover:bg-coral-light transition-all"

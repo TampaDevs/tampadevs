@@ -51,7 +51,7 @@ export default function ThankYou() {
                 Back to Home
               </Link>
               <a
-                href="https://tampa.dev/groups/tampa-devs"
+                href="https://tampa.dev/groups/tampadevs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-navy-light text-white font-semibold rounded-lg hover:bg-navy-light/80 transition-all"

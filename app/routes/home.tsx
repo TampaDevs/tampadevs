@@ -55,7 +55,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   let nextEvent: EventApiResponse | null = null;
   let memberCount = "3,000+";
   try {
-    const response = await fetch("https://events.api.tampa.dev/events/next?groups=tampadevs");
+    const response = await fetch("https://api.tampa.dev/events/next?groups=tampadevs");
     if (response.ok) {
       const events: EventApiResponse[] = await response.json();
       if (events.length > 0) {
@@ -136,7 +136,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       icon: <UsersIcon />,
       title: "Community Events",
       description: "Monthly meetups, workshops, and networking opportunities with Tampa Bay developers.",
-      href: "https://tampa.dev/groups/tampa-devs",
+      href: "https://tampa.dev/groups/tampadevs",
       cta: "View Events",
     },
     {
@@ -437,7 +437,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href="https://tampa.dev/groups/tampa-devs"
+                    href="https://tampa.dev/groups/tampadevs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-coral text-white font-semibold rounded-xl hover:bg-coral-light transition-all shadow-lg shadow-coral/25"

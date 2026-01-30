@@ -113,7 +113,7 @@ The site is deployed to:
 
 ## Related Projects
 
-- [events.api.tampa.dev](https://github.com/TampaDevs/events.api.tampa.dev) - Events API and tampa.dev website
+- [api.tampa.dev](https://github.com/TampaDevs/tampa.dev) - Events API and tampa.dev website
 - [tampadevs-design-system](https://github.com/TampaDevs/tampadevs-design) - Shared design system
 
 ## License

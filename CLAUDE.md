@@ -7,7 +7,7 @@ This file provides context for AI coding agents working on the Tampa Devs websit
 The official website for Tampa Devs (tampadevs.com), built with React Router 7 SSR on Cloudflare Workers.
 
 **Related Projects:**
-- `events.api.tampa.dev` - Events API and tampa.dev website (same architecture)
+- `api.tampa.dev` - Events API and tampa.dev website (same architecture)
 - `tampadevs-design-system` - Shared design tokens and web components
 
 ## Quick Commands
@@ -204,7 +204,7 @@ import { Component } from "~/components";
 ### Fetch API data
 ```typescript
 export async function loader() {
-  const res = await fetch("https://events.api.tampa.dev/...");
+  const res = await fetch("https://api.tampa.dev/...");
   const data = await res.json();
   return { data };
 }
