@@ -1,14 +1,16 @@
 import type { Route } from "./+types/partnership";
 import { generateMetaTags } from "~/lib/seo";
+import { generateBreadcrumbSchema } from "~/lib/structured-data";
+import { StructuredData } from "~/components/StructuredData";
 import { getAllSponsors } from "~/data/sponsors";
 import { LogoMarquee, Button } from "@tampadevs/react";
 import type { MarqueeLogo } from "@tampadevs/react";
 
 export const meta: Route.MetaFunction = () => {
   return generateMetaTags({
-    title: "Partner with Tampa Devs",
+    title: "Sponsor Tampa Devs - Partner with Tampa Bay's Tech Community",
     description:
-      "Partner with Tampa Devs to support Tampa Bay's developer community. Your sponsorship enables events, workshops, and career opportunities.",
+      "Sponsor Tampa Bay's largest developer community. Tampa Devs is a 501(c)(3) nonprofit reaching 3,000+ software developers and tech professionals through free events.",
     url: "https://tampadevs.com/partnership",
   });
 };
@@ -141,328 +143,336 @@ export default function Partnership({ loaderData }: Route.ComponentProps) {
   ];
 
   return (
-    <main className="bg-navy min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-coral/20 via-navy to-navy" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-coral/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+    <>
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: "Home", url: "https://tampadevs.com" },
+          { name: "Partnership", url: "https://tampadevs.com/partnership" },
+        ])}
+      />
+      <main className="bg-navy min-h-screen">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-coral/20 via-navy to-navy" />
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-coral/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
 
-        <div className="relative container mx-auto px-6 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-coral/10 rounded-full text-coral font-medium text-sm mb-6">
-              <HeartIcon />
-              Support the Community
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Partner with
-              <span className="text-coral"> Tampa Devs</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Join the companies investing in Tampa Bay's tech future. Your sponsorship
-              directly supports free events, workshops, and career opportunities for
-              thousands of developers.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
-              >
-                Become a Partner
-              </a>
-              <a
-                href="mailto:sponsor@tampadevs.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all backdrop-blur-sm"
-              >
-                Email Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-navy-light border-y border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-navy rounded-2xl border border-white/5"
-              >
-                <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mx-auto mb-4">
-                  {stat.icon}
-                </div>
-                <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-                <p className="text-gray-400 text-sm">{stat.label}</p>
+          <div className="relative container mx-auto px-6 py-20 md:py-28">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-coral/10 rounded-full text-coral font-medium text-sm mb-6">
+                <HeartIcon />
+                Support the Community
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section */}
-      <section className="py-20 bg-navy">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Your Impact
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Sponsor contributions directly enable us to grow Tampa Bay's developer ecosystem.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Partner with
+                <span className="text-coral"> Tampa Devs</span>
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Join the companies investing in Tampa Bay's tech future. Your sponsorship
+                directly supports free events, workshops, and career opportunities for
+                thousands of developers.
               </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
+                >
+                  Become a Partner
+                </a>
+                <a
+                  href="mailto:sponsor@tampadevs.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all backdrop-blur-sm"
+                >
+                  Email Us
+                </a>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              {impactAreas.map((item, index) => (
+        {/* Stats Section */}
+        <section className="py-16 bg-navy-light border-y border-white/5">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-5 bg-navy-light rounded-xl border border-white/5"
+                  className="text-center p-6 bg-navy rounded-2xl border border-white/5"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 bg-coral/10 rounded-lg flex items-center justify-center text-coral">
-                    <CheckIcon />
+                  <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mx-auto mb-4">
+                    {stat.icon}
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{item}</p>
+                  <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
+                  <p className="text-gray-400 text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-navy-light">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Sponsor Benefits
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Get your brand in front of Tampa Bay's most engaged developer community.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="p-8 bg-navy rounded-2xl border border-white/5 hover:border-coral/20 transition-all"
-                >
-                  <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mb-5">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Current Sponsors */}
-      <section className="py-20 bg-navy">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Current Partners
-              </h2>
-              <p className="text-gray-400">
-                Join these amazing companies supporting Tampa Bay's tech community.
-              </p>
-            </div>
-
-            <LogoMarquee
-              logos={sponsors}
-              speed={40}
-              logoHeight="60px"
-              pauseOnHover
-              color
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial/Quote Section */}
-      <section className="py-20 bg-navy-light">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-coral/10 via-transparent to-transparent rounded-3xl p-1">
-              <div className="bg-navy rounded-[22px] p-10 md:p-14 text-center">
-                <div className="flex justify-center gap-1 mb-6 text-coral">
-                  <StarIcon />
-                  <StarIcon />
-                  <StarIcon />
-                  <StarIcon />
-                  <StarIcon />
-                </div>
-                <blockquote className="text-xl md:text-2xl text-white font-medium mb-6 leading-relaxed">
-                  "Tampa Devs has been instrumental in helping us connect with talented developers
-                  in the Tampa Bay area. Their events consistently attract engaged, passionate
-                  technologists."
-                </blockquote>
-                <p className="text-coral font-semibold">Tampa Devs Sponsor</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-navy">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* Left side - Text */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Let's Build Great Things Together
+        {/* Impact Section */}
+        <section className="py-20 bg-navy">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Your Impact
                 </h2>
-                <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                  Ready to partner with Tampa Bay's largest developer community?
-                  Fill out the form and our team will get back to you within 48 hours.
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Sponsor contributions directly enable us to grow Tampa Bay's software developer ecosystem.
                 </p>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <svg className="w-5 h-5 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <a href="mailto:sponsor@tampadevs.com" className="hover:text-coral transition-colors">
-                      sponsor@tampadevs.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <svg className="w-5 h-5 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>Tampa Bay, Florida</span>
-                  </div>
-                </div>
-
-                <div className="mt-10 p-6 bg-navy-light rounded-xl border border-white/5">
-                  <p className="text-sm text-gray-400">
-                    <strong className="text-white">501(c)(3) Nonprofit</strong>
-                    <br />
-                    Tampa Devs is a registered nonprofit organization. Sponsorship contributions
-                    may be tax-deductible.
-                  </p>
-                </div>
               </div>
 
-              {/* Right side - Form */}
-              <div className="bg-navy-light rounded-2xl p-8 border border-white/5">
-                <form
-                  action="https://formspree.io/f/xknenrnk"
-                  method="post"
-                  className="space-y-5"
-                >
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Jane Smith"
-                      required
-                      className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      Work Email
-                    </label>
-                    <input
-                      type="email"
-                      name="_replyto"
-                      id="email"
-                      placeholder="jane@company.com"
-                      required
-                      className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      id="company"
-                      placeholder="Acme Inc."
-                      required
-                      className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone-number"
-                      id="phone"
-                      placeholder="(813) 555-0123"
-                      className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      How would you like to partner with us?
-                    </label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows={4}
-                      placeholder="Tell us about your company and sponsorship interests..."
-                      required
-                      className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors resize-none"
-                    />
-                  </div>
-
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="Partnership Inquiry - Tampa Devs"
-                  />
-
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
+              <div className="grid md:grid-cols-2 gap-4">
+                {impactAreas.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-5 bg-navy-light rounded-xl border border-white/5"
                   >
-                    Send Message
-                  </button>
-                </form>
+                    <div className="flex-shrink-0 w-8 h-8 bg-coral/10 rounded-lg flex items-center justify-center text-coral">
+                      <CheckIcon />
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{item}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 bg-navy-light">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Sponsor Benefits
+                </h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Get your brand in front of Tampa Bay's most engaged developer community.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {benefits.map((benefit, index) => (
+                  <div
+                    key={index}
+                    className="p-8 bg-navy rounded-2xl border border-white/5 hover:border-coral/20 transition-all"
+                  >
+                    <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mb-5">
+                      {benefit.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                    <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Current Sponsors */}
+        <section className="py-20 bg-navy">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Current Partners
+                </h2>
+                <p className="text-gray-400">
+                  Join these amazing companies supporting Tampa Bay's tech community.
+                </p>
+              </div>
+
+              <LogoMarquee
+                logos={sponsors}
+                speed={40}
+                logoHeight="60px"
+                pauseOnHover
+                color
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonial/Quote Section */}
+        <section className="py-20 bg-navy-light">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-coral/10 via-transparent to-transparent rounded-3xl p-1">
+                <div className="bg-navy rounded-[22px] p-10 md:p-14 text-center">
+                  <div className="flex justify-center gap-1 mb-6 text-coral">
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </div>
+                  <blockquote className="text-xl md:text-2xl text-white font-medium mb-6 leading-relaxed">
+                    "Tampa Devs has been instrumental in helping us connect with talented developers
+                    in the Tampa Bay area. Their events consistently attract engaged, passionate
+                    technologists."
+                  </blockquote>
+                  <p className="text-coral font-semibold">Tampa Devs Sponsor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section id="contact" className="py-20 bg-navy">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                {/* Left side - Text */}
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Let's Build Great Things Together
+                  </h2>
+                  <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Ready to partner with Tampa Bay's largest developer community?
+                    Fill out the form and our team will get back to you within 48 hours.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-gray-300">
+                      <svg className="w-5 h-5 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <a href="mailto:sponsor@tampadevs.com" className="hover:text-coral transition-colors">
+                        sponsor@tampadevs.com
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-300">
+                      <svg className="w-5 h-5 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span>Tampa Bay, Florida</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-10 p-6 bg-navy-light rounded-xl border border-white/5">
+                    <p className="text-sm text-gray-400">
+                      <strong className="text-white">501(c)(3) Nonprofit</strong>
+                      <br />
+                      Tampa Devs is a registered nonprofit organization. Sponsorship contributions
+                      may be tax-deductible.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right side - Form */}
+                <div className="bg-navy-light rounded-2xl p-8 border border-white/5">
+                  <form
+                    action="https://formspree.io/f/xknenrnk"
+                    method="post"
+                    className="space-y-5"
+                  >
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Jane Smith"
+                        required
+                        className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
+                        Work Email
+                      </label>
+                      <input
+                        type="email"
+                        name="_replyto"
+                        id="email"
+                        placeholder="jane@company.com"
+                        required
+                        className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
+                        Company
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        id="company"
+                        placeholder="Acme Inc."
+                        required
+                        className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone-number"
+                        id="phone"
+                        placeholder="(813) 555-0123"
+                        className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
+                        How would you like to partner with us?
+                      </label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows={4}
+                        placeholder="Tell us about your company and sponsorship interests..."
+                        required
+                        className="w-full px-4 py-3 bg-navy border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors resize-none"
+                      />
+                    </div>
+
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="Partnership Inquiry - Tampa Devs"
+                    />
+
+                    <button
+                      type="submit"
+                      className="w-full px-6 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

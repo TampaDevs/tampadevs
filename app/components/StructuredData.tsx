@@ -3,14 +3,16 @@ interface StructuredDataProps {
 }
 
 export function StructuredData({ data }: StructuredDataProps) {
-  const jsonLd = Array.isArray(data)
-    ? data.map((d) => JSON.stringify(d)).join("\n")
-    : JSON.stringify(data);
-
+  const items = Array.isArray(data) ? data : [data];
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: jsonLd }}
-    />
+    <>
+      {items.map((d, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }}
+        />
+      ))}
+    </>
   );
 }

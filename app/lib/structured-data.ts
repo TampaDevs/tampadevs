@@ -6,9 +6,9 @@ export function generateOrganizationSchema() {
     url: "https://tampadevs.com",
     logo: "https://tampadevs.com/images/logo.png",
     description:
-      "Tampa Bay's largest tech community, connecting developers, designers, and tech professionals.",
+      "Tampa Devs is a 501(c)(3) nonprofit technology community in Tampa Bay, Florida, connecting software developers, engineers, designers, and tech professionals through free events, workshops, and mentorship programs.",
     sameAs: [
-      "https://twitter.com/tamaboreal",
+      "https://twitter.com/tampadevs",
       "https://www.linkedin.com/company/tampa-devs",
       "https://github.com/TampaDevs",
       "https://www.meetup.com/tampa-devs",
@@ -33,6 +33,23 @@ export function generateWebsiteSchema() {
       target: "https://tampa.dev/events?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+export function generateFAQSchema(
+  faqs: { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
 

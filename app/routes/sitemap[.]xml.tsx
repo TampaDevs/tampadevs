@@ -21,6 +21,10 @@ export async function loader({ request }: Route.LoaderArgs) {
     { url: "/privacy-policy", priority: "0.5", changefreq: "yearly" },
     { url: "/onboarding", priority: "0.5", changefreq: "monthly" },
     { url: "/archive", priority: "0.5", changefreq: "monthly" },
+    { url: "/community", priority: "0.8", changefreq: "monthly" },
+    { url: "/events", priority: "0.8", changefreq: "monthly" },
+    { url: "/get-involved", priority: "0.7", changefreq: "monthly" },
+    { url: "/cloud-project", priority: "0.7", changefreq: "monthly" },
   ];
 
   const blogPages = posts.map((post) => ({

@@ -1,6 +1,9 @@
 import type { Route } from "./+types/about";
 import { generateMetaTags } from "~/lib/seo";
-import { generateOrganizationSchema } from "~/lib/structured-data";
+import {
+  generateOrganizationSchema,
+  generateBreadcrumbSchema,
+} from "~/lib/structured-data";
 import { StructuredData } from "~/components/StructuredData";
 import { getOrganizers } from "~/data/people";
 import { getAllSponsors } from "~/data/sponsors";
@@ -15,9 +18,9 @@ import { Link } from "react-router";
 
 export const meta: Route.MetaFunction = () => {
   return generateMetaTags({
-    title: "About Tampa Devs - Our Story & Team",
+    title: "About Tampa Devs - Our Story, Team & Mission",
     description:
-      "Learn about Tampa Devs, the leading nonprofit software community in Tampa Bay. Meet our team and discover how we're breaking barriers in the tech industry.",
+      "Learn about Tampa Devs, a 501(c)(3) nonprofit technology community in Tampa Bay. Meet the team behind 200+ free developer meetups, workshops, and mentorship programs.",
     url: "https://tampadevs.com/about",
   });
 };
@@ -126,7 +129,15 @@ export default function About({ loaderData }: Route.ComponentProps) {
 
   return (
     <>
-      <StructuredData data={generateOrganizationSchema()} />
+      <StructuredData
+        data={[
+          generateOrganizationSchema(),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://tampadevs.com" },
+            { name: "About", url: "https://tampadevs.com/about" },
+          ]),
+        ]}
+      />
 
       <main className="bg-navy min-h-screen">
         {/* Hero Section */}
@@ -226,7 +237,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
                       skills and find success in the technology industry. Today, with more
                       than 2,000 active members and an average attendance of over 200
                       at our hosted events, we are proud to serve as a thriving hub for
-                      Tampa Bay's developer community.
+                      Tampa Bay's software developer community.
                     </p>
                     <p>
                       Our innovative partnerships with local universities, non-profit tech

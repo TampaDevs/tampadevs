@@ -44,7 +44,7 @@ export function generateMetaTags({
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: image },
-    { name: "twitter:site", content: "@tamaborlan" },
+    { name: "twitter:site", content: "@tampadevs" },
 
     // Canonical
     { tagName: "link", rel: "canonical", href: url },

@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
     title: "Tampa Devs Public Cloud Project",
     author: "Justin Herron",
     date: "2024-08-24",
-    intro: "Expanding equitable access to cloud infrastructure for Tampa Bay's developer community",
+    intro: "Expanding equitable access to cloud infrastructure for Tampa Bay's software developer community",
     heroImage: "/images/blog/2024/public-cloud/image3.webp",
   },
 ];

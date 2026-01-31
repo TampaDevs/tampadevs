@@ -41,7 +41,7 @@ const TwitterIcon = () => (
 const navActions = [
   { label: "", href: "https://github.com/TampaDevs", external: true, icon: <GitHubIcon /> },
   { label: "", href: "https://www.linkedin.com/company/tampa-devs", external: true, icon: <LinkedInIcon /> },
-  { label: "", href: "https://twitter.com/tamaborlan", external: true, icon: <TwitterIcon /> },
+  { label: "", href: "https://twitter.com/tampadevs", external: true, icon: <TwitterIcon /> },
 ];
 
 const footerLinkGroups = [
@@ -49,7 +49,9 @@ const footerLinkGroups = [
     title: "Community",
     links: [
       { label: "About", href: "/about" },
-      { label: "Events", href: "https://tampa.dev/groups/tampadevs", external: true },
+      { label: "Community", href: "/community" },
+      { label: "Tampa Bay Tech Events", href: "https://tampa.dev/groups/tampadevs", external: true },
+      { label: "Get Involved", href: "/get-involved" },
       { label: "Slack", href: "https://go.tampa.dev/slack", external: true },
       { label: "Mentorship", href: "https://go.tampa.dev/mentorship", external: true },
     ],
@@ -74,9 +76,9 @@ const footerLinkGroups = [
 ];
 
 const footerSocials = [
-  { name: "GitHub", href: "https://github.com/tampadevs", icon: "github" as const },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampadevs", icon: "linkedin" as const },
-  { name: "Twitter", href: "https://twitter.com/tamaborodevs", icon: "twitter" as const },
+  { name: "GitHub", href: "https://github.com/TampaDevs", icon: "github" as const },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampa-devs", icon: "linkedin" as const },
+  { name: "Twitter", href: "https://twitter.com/tampadevs", icon: "twitter" as const },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -123,7 +125,7 @@ export default function App() {
       />
       <Outlet />
       <Footer
-        description="Tampa Devs is a nonprofit community for software developers in Tampa Bay. We host workshops and create educational and career opportunities for all backgrounds and experience levels."
+        description="Tampa Devs is a 501(c)(3) nonprofit technology community in Tampa Bay connecting software developers, engineers, designers, and tech professionals through free events, workshops, and mentorship programs."
         linkGroups={footerLinkGroups}
         socials={footerSocials}
         logo={<Logo variant="full" size="sm" colorScheme="light" />}

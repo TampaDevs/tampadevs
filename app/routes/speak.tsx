@@ -1,12 +1,14 @@
 import type { Route } from "./+types/speak";
 import { generateMetaTags } from "~/lib/seo";
+import { generateBreadcrumbSchema } from "~/lib/structured-data";
+import { StructuredData } from "~/components/StructuredData";
 import { Link } from "react-router";
 
 export const meta: Route.MetaFunction = () => {
   return generateMetaTags({
-    title: "Speak at Tampa Devs",
+    title: "Speak at Tampa Devs - Give a Tech Talk in Tampa Bay",
     description:
-      "Share your knowledge with Tampa Bay's developer community. Learn about the benefits of speaking and how to submit a talk.",
+      "Give a tech talk at Tampa Bay's largest developer meetup. Tampa Devs provides professional video production, photography, and a blog feature for every speaker.",
     url: "https://tampadevs.com/speak",
   });
 };
@@ -105,10 +107,17 @@ export default function Speaker() {
   ];
 
   return (
-    <main className="bg-navy min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background gradient */}
+    <>
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: "Home", url: "https://tampadevs.com" },
+          { name: "Speak", url: "https://tampadevs.com/speak" },
+        ])}
+      />
+      <main className="bg-navy min-h-screen">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden">
+          {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral/20 via-navy to-navy" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-coral/10 via-transparent to-transparent" />
 
@@ -320,5 +329,6 @@ export default function Speaker() {
         </div>
       </section>
     </main>
+    </>
   );
 }

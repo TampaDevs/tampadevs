@@ -9,14 +9,13 @@ const redirects: Record<string, string> = {
   "/donate": "https://go.tampa.dev/donate",
   "/jobs": "https://talent.tampa.dev/developers",
   "/store": "https://store.tampa.dev/",
-  "/events": "https://tampa.dev/groups/tampadevs",
   "/slack": "https://go.tampa.dev/slack",
-  "/meetup": "https://tampa.dev/groups/tampadevs",
+  "/meetup": "/events",
   "/discord": "https://go.tampa.dev/slack",
   "/youtube": "https://www.youtube.com/@TampaDevs",
   "/github": "https://github.com/TampaDevs",
   "/linkedin": "https://www.linkedin.com/company/tampa-devs",
-  "/twitter": "https://twitter.com/tamaborlan",
+  "/twitter": "https://twitter.com/tampadevs",
 
   // Short links
   "/speaker": "/speak",

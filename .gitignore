@@ -27,3 +27,5 @@ worker-configuration.d.ts
 
 # Test coverage
 coverage/
+
+.claude/

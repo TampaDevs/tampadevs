@@ -24,6 +24,12 @@ export default [
   route("archive", "routes/archive.tsx"),
   route("thank-you", "routes/thank-you.tsx"),
 
+  // Evergreen SEO pages
+  route("community", "routes/community.tsx"),
+  route("events", "routes/events.tsx"),
+  route("get-involved", "routes/get-involved.tsx"),
+  route("cloud-project", "routes/cloud-project.tsx"),
+
   // Utility routes
   route("sitemap.xml", "routes/sitemap[.]xml.tsx"),
   route("feed.xml", "routes/feed[.]xml.tsx"),

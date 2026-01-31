@@ -36,9 +36,9 @@ interface EventApiResponse {
 
 export const meta: Route.MetaFunction = () => {
   return generateMetaTags({
-    title: "Tampa Devs - Tampa Bay's Developer Community",
+    title: "Tampa Devs - Tampa Bay's Nonprofit Developer & Tech Community",
     description:
-      "Tampa Devs is the fastest-growing nonprofit community for software developers in Tampa Bay. Join us for free workshops, educational events, and career opportunities.",
+      "Tampa Devs is a 501(c)(3) nonprofit community for software developers, engineers, and tech professionals in Tampa Bay. Join free meetups, workshops, and mentorship programs.",
     url: "https://tampadevs.com",
   });
 };
@@ -115,6 +115,12 @@ const BuildingIcon = () => (
   </svg>
 );
 
+const CloudIcon = () => (
+  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+  </svg>
+);
+
 const ArrowRightIcon = () => (
   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -137,7 +143,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       title: "Community Events",
       description: "Monthly meetups, workshops, and networking opportunities with Tampa Bay developers.",
       href: "https://tampa.dev/groups/tampadevs",
-      cta: "View Events",
+      cta: "Browse Tampa Bay Tech Events",
     },
     {
       icon: <CalendarIcon />,
@@ -152,6 +158,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       description: "Free mentorship program connecting junior developers with experienced engineers.",
       href: "https://go.tampa.dev/mentorship",
       cta: "Get Mentored",
+    },
+    {
+      icon: <CloudIcon />,
+      title: "Public Cloud",
+      description: "Free, open-source cloud infrastructure for schools, universities, and developers — from baremetal to hyperscaler computing.",
+      href: "/cloud-project",
+      cta: "Learn About the Cloud",
     },
   ];
 
@@ -217,7 +230,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 Tampa Devs
               </h1>
               <p className="text-lg md:text-2xl text-gray-200 mt-2">
-                Tampa Bay's Developer Community
+                Tampa Bay's Community for Software Developers &amp; Tech Professionals
               </p>
               <div className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
                 <Button variant="primary" href="#events">Events</Button>
@@ -276,11 +289,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Building Tampa Bay's Tech Community
           </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Tampa Devs is the{" "}
-            <strong className="text-white">fastest-growing nonprofit community</strong>{" "}
-            for software developers in Tampa Bay. We're united by a shared mission to break
-            barriers in the tech industry and create opportunities for{" "}
+          <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+            Tampa Devs is a{" "}
+            <strong className="text-white">501(c)(3) nonprofit community</strong>{" "}
+            connecting software developers, data engineers,
+            product managers, builders, and tech founders across the Tampa Bay area.
+            From monthly meetups and hands-on workshops to mentorship and career support,
+            we create opportunities for{" "}
             <strong className="text-white">all backgrounds and experience levels</strong>.
           </p>
           <Link
@@ -325,14 +340,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <a
                 key={index}
                 href={feature.href}
                 target={feature.href.startsWith('http') ? '_blank' : undefined}
                 rel={feature.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group bg-navy-light p-8 rounded-2xl border border-white/5 hover:border-coral/30 transition-all hover:-translate-y-1 flex flex-col"
+                className="group bg-navy-light p-8 rounded-2xl border border-white/5 hover:border-coral/30 transition-all hover:-translate-y-1 flex flex-col w-full md:w-[calc(33.333%-1.375rem)]"
               >
                 <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mb-6 group-hover:bg-coral/20 transition-colors">
                   {feature.icon}
@@ -442,7 +457,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-coral text-white font-semibold rounded-xl hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
                   >
-                    Join the Community
+                    Explore Events
                   </a>
                   <a
                     href="https://go.tampa.dev/slack"
