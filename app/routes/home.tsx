@@ -217,15 +217,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
 
         {/* Content */}
-        <div className="relative container mx-auto px-6 py-16 md:py-32 pb-32 md:pb-40">
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-10">
+        <div className="relative container mx-auto px-6 pt-16 md:pt-32 pb-32 md:pb-40">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Large Logo */}
-            <div className="flex-shrink-0 transform scale-[1.8] md:scale-[2] origin-center">
-              <Logo variant="icon" size="2xl" />
+            <div className="flex-shrink-0">
+              <div className="transform scale-150 md:scale-[1.75]">
+                <Logo variant="icon" size="2xl" />
+              </div>
             </div>
 
             {/* Heading */}
-            <div className="text-center md:text-left md:ml-8">
+            <div className="text-center md:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                 Tampa Devs
               </h1>
