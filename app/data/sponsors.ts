@@ -19,6 +19,12 @@ export const sponsors: Sponsor[] = [
     type: "gold",
   },
   {
+    name: "Cloudinary",
+    logo: "cloudinary_logo_blue.png",
+    href: "https://cloudinary.com/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
+    type: "silver",
+  },
+  {
     name: "Packfiles",
     logo: "packfiles.svg",
     href: "https://packfiles.io/?utm_source=tampadevs&utm_medium=referral&utm_campaign=community_sponsor",
