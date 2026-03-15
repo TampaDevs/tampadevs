@@ -14,7 +14,7 @@ export interface TeamMember {
 export const people: TeamMember[] = [
   {
     name: "Matthew Yorkgitis",
-    title: "President",
+    title: "Vice President",
     bio: "Executive level software engineer, manager, and strategist with a passion for leveraging technology to create more impactful businesses and supportive communities.",
     image: "matt_yorkgitis.jpg",
     teams: ["Team Core", "Organizers"],
@@ -37,14 +37,14 @@ export const people: TeamMember[] = [
     order: 2,
   },
   {
-    name: "Nelson Yee",
-    title: "Events Coordinator",
-    bio: "Driven by a growth mindset, commitment to lifelong learning, and a profound appreciation for technology.",
-    image: "nelson_yee.jpg",
+    name: "Ammar Yusuf",
+    title: "Event Team Coordinator",
+    bio: "Community Builder, Java nerd, and organizer for Tampa Java User Group"
+    image: "ammar_yusuf.jpg"
     teams: ["Team Core", "Organizers"],
-    href: {
-      type: "LinkedIn",
-      url: "https://www.linkedin.com/in/nelyee/",
+    href: { 
+      type: "LinkedIn",     
+      url: "https://www.linkedin.com/in/ammaryusuf/",
     },
     order: 3,
   },
