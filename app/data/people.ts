@@ -39,8 +39,8 @@ export const people: TeamMember[] = [
   {
     name: "Ammar Yusuf",
     title: "Event Team Coordinator",
-    bio: "Community Builder, Java nerd, and organizer for Tampa Java User Group"
-    image: "ammar_yusuf.jpg"
+    bio: "Community Builder, Java nerd, and organizer for Tampa Java User Group",
+    image: "ammar_yusuf.jpg",
     teams: ["Team Core", "Organizers"],
     href: { 
       type: "LinkedIn",     
