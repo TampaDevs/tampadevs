@@ -9,14 +9,15 @@ import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
+
 export default defineConfig({
   plugins: [
-    cloudflare({
-      viteEnvironment: { name: "ssr" },
-    }),
-    mdx({
+    { enforce: "pre", ...mdx({
       remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
       rehypePlugins: [rehypeSlug],
+    }) },
+    cloudflare({
+      viteEnvironment: { name: "ssr" },
     }),
     tailwindcss(),
     reactRouter(),
