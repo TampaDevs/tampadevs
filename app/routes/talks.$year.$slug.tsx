@@ -26,7 +26,7 @@ export const meta: Route.MetaFunction = ({ data }) => {
       ? `https://img.youtube.com/vi/${data.talk.youtubeId}/maxresdefault.jpg`
       : data.talk.heroImage
         ? `https://tampadevs.com${data.talk.heroImage}`
-        : undefined,
+        : data.talk.meetupFlyer,
   });
 };
 
@@ -43,7 +43,6 @@ export async function loader({ params }: Route.LoaderArgs) {
     throw new Response("Not Found", { status: 404 });
   }
 
-  // Check if MDX file exists
   const hasContent = Object.keys(mdxModules).some((path) =>
     path.endsWith(`${year}/${slug}.mdx`)
   );
@@ -57,7 +56,6 @@ export async function loader({ params }: Route.LoaderArgs) {
 export default function TalkPage({ loaderData }: Route.ComponentProps) {
   const { talk, year, slug, hasContent, authors, isMultipleAuthors } = loaderData;
 
-  // Dynamically load the MDX component
   const MDXContent = useMemo(() => {
     if (!hasContent) return null;
 

@@ -6,6 +6,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 export default defineConfig({
   plugins: [
@@ -13,7 +15,7 @@ export default defineConfig({
       viteEnvironment: { name: "ssr" },
     }),
     mdx({
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
       rehypePlugins: [rehypeSlug],
     }),
     tailwindcss(),
