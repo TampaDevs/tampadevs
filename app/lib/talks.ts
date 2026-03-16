@@ -13,7 +13,6 @@ export interface Talk {
 
 const modules = import.meta.glob("../content/talks/**/*.mdx", {
   eager: true,
-  query: "?frontmatter",
 });
 
 const talks: Talk[] = Object.entries(modules).flatMap(([filepath, mod]) => {
