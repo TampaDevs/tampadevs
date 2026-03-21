@@ -114,6 +114,25 @@ export async function loader({ context }: Route.LoaderArgs) {
   return { sponsors, nextEvent, memberCount };
 }
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/#{1,6}\s+/g, "")           // headings
+    .replace(/\*\*(.+?)\*\*/g, "$1")      // bold
+    .replace(/\*(.+?)\*/g, "$1")          // italic
+    .replace(/__(.+?)__/g, "$1")          // bold alt
+    .replace(/_(.+?)_/g, "$1")            // italic alt
+    .replace(/~~(.+?)~~/g, "$1")          // strikethrough
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, "") // images
+    .replace(/`{1,3}[^`]*`{1,3}/g, "")   // inline code
+    .replace(/^[-*+]\s+/gm, "")           // unordered lists
+    .replace(/^\d+\.\s+/gm, "")           // ordered lists
+    .replace(/^>\s+/gm, "")               // blockquotes
+    .replace(/\\([*_~`#])/g, "$1")        // escaped chars
+    .replace(/\n{2,}/g, " ")              // collapse newlines
+    .trim();
+}
+
 function formatEventTime(dateTime: string): string {
   const date = new Date(dateTime);
   return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
@@ -316,7 +335,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               imageUrl={nextEvent.photoUrl || undefined}
               rsvpCount={nextEvent.rsvpCount}
               isOnline={nextEvent.isOnline}
-              description={nextEvent.description}
+              description={nextEvent.description ? stripMarkdown(nextEvent.description) : undefined}
               relativeTime={getRelativeTime(nextEvent.dateTime)}
             />
           </div>
