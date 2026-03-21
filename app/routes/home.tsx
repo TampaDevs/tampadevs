@@ -182,6 +182,18 @@ const CloudIcon = () => (
   </svg>
 );
 
+const ChatIcon = () => (
+  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+  </svg>
+);
+
+const MicIcon = () => (
+  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+  </svg>
+);
+
 const ArrowRightIcon = () => (
   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -204,14 +216,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       title: "Community Events",
       description: "Monthly meetups, workshops, and networking opportunities with Tampa Bay developers.",
       href: "https://tampa.dev/groups/tampadevs",
-      cta: "Browse Tampa Bay Tech Events",
+      cta: "Browse Events",
     },
     {
       icon: <CalendarIcon />,
       title: "Talent Network",
       description: "A reverse job board connecting developers with companies in Tampa Bay.",
       href: "https://talent.tampa.dev/",
-      cta: "Join Tampa Devs Talent",
+      cta: "Join Talent Network",
     },
     {
       icon: <HeartIcon />,
@@ -223,33 +235,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     {
       icon: <CloudIcon />,
       title: "Public Cloud",
-      description: "Free, open-source cloud infrastructure for schools, universities, and developers — from baremetal to hyperscaler computing.",
+      description: "Free, open-source cloud infrastructure for schools, universities, and developers.",
       href: "/cloud-project",
-      cta: "Learn About the Cloud",
+      cta: "Learn More",
     },
-  ];
-
-  const resources = [
     {
+      icon: <ChatIcon />,
       title: "Slack Community",
       description: "Join 2,000+ developers in our active Slack workspace for discussions, job leads, and help.",
-      image: "/images/promo-slack.webp",
       href: "https://go.tampa.dev/slack",
       cta: "Join Slack",
     },
     {
+      icon: <MicIcon />,
       title: "Give a Talk",
       description: "Share your knowledge with the community. We provide full video production.",
-      image: "/images/about/tampa-dev-edited-117.jpg",
       href: "/speak",
       cta: "Learn More",
-    },
-    {
-      title: "Awesome Merch",
-      description: "Support Tampa Devs and show your pride with branded merchandise.",
-      image: "/images/promo-store.webp",
-      href: "https://store.tampa.dev/",
-      cta: "Shop Merch",
     },
   ];
 
@@ -319,7 +321,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      {/* Featured Event - Pulled up into hero */}
+      {/* Featured Event - overlaps hero */}
       {nextEvent && (
         <section id="events" className="container mx-auto px-6 -mt-16 md:-mt-20 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -342,13 +344,33 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </section>
       )}
 
-      {/* Intro Section */}
-      <section className="py-16 bg-navy relative overflow-hidden">
-        {/* Subtle background decoration */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl" />
+      {/* Stats + Intro — unified section */}
+      <section className="bg-navy relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl z-0" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl z-0" />
 
-        <div className="relative container mx-auto px-6 max-w-4xl text-center">
+        {/* Stats Banner */}
+        <div className="py-12 relative z-10">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center p-6 bg-navy rounded-2xl border border-white/5"
+                >
+                  <div className="w-12 h-12 bg-coral/10 rounded-xl flex items-center justify-center text-coral mx-auto mb-3">
+                    {stat.icon}
+                  </div>
+                  <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
+                  <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Intro */}
+        <div className="relative z-10 container mx-auto px-6 max-w-4xl text-center pb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Building Tampa Bay's Tech Community
           </h2>
@@ -371,28 +393,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section className="py-12 bg-navy-light">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-navy rounded-2xl border border-white/5"
-              >
-                <div className="w-12 h-12 bg-coral/10 rounded-xl flex items-center justify-center text-coral mx-auto mb-3">
-                  {stat.icon}
-                </div>
-                <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
-                <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features/What We Offer Section */}
-      <section className="py-20 bg-navy">
+      {/* What We Offer Section */}
+      <section className="py-20 bg-navy-light">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -403,14 +405,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <a
                 key={index}
                 href={feature.href}
                 target={feature.href.startsWith('http') ? '_blank' : undefined}
                 rel={feature.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group bg-navy-light p-8 rounded-2xl border border-white/5 hover:border-coral/30 transition-all hover:-translate-y-1 flex flex-col w-full md:w-[calc(33.333%-1.375rem)]"
+                className="group bg-navy p-8 rounded-2xl border border-white/5 hover:border-coral/30 transition-all hover:-translate-y-1 flex flex-col"
               >
                 <div className="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center text-coral mb-6 group-hover:bg-coral/20 transition-colors">
                   {feature.icon}
@@ -427,84 +429,37 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section className="py-20 bg-navy-light">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Resources
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Tools and platforms to help you succeed in your developer journey.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {resources.map((resource, index) => (
-              <a
-                key={index}
-                href={resource.href}
-                target={resource.href.startsWith('http') ? '_blank' : undefined}
-                rel={resource.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group block bg-navy rounded-2xl overflow-hidden border border-white/5 hover:border-coral/30 transition-all hover:-translate-y-1 h-full flex flex-col"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={resource.image}
-                    alt=""
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-coral transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed flex-grow">{resource.description}</p>
-                  <span className="inline-flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all mt-4">
-                    {resource.cta}
-                    <ArrowRightIcon />
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors Section */}
+      {/* Our Supporters Section */}
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6 max-w-4xl">
           <SponsorGrid
-            title="Our Sponsors"
-            description="These amazing companies help keep Tampa Devs free for everyone."
+            title="Our Supporters"
+            description="These amazing companies and individuals help keep Tampa Devs free for everyone."
             sponsors={sponsors}
             showTierHeadings
           >
             <Button variant="primary" href="mailto:sponsor@tampadevs.com">Become a Sponsor</Button>
           </SponsorGrid>
+
+          <div className="mt-16">
+            <OpenCollective
+              collective="tampadevs"
+              mode="backers"
+              title="Community Donors"
+              description="Thank you to all our individual supporters!"
+              showButton
+              showStats
+            />
+          </div>
         </div>
       </section>
 
-      {/* Community Donors */}
-      <section className="py-20 bg-navy-light">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <OpenCollective
-            collective="tampadevs"
-            mode="backers"
-            title="Community Donors"
-            description="Thank you to all our individual supporters!"
-            showButton
-            showStats
-          />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-navy">
+      {/* Join + Newsletter CTA */}
+      <section id="newsletter" className="py-20 bg-navy-light">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-coral/20 via-coral/10 to-transparent rounded-3xl p-1">
-              <div className="bg-navy-light rounded-[22px] p-10 md:p-14 text-center">
+              <div className="bg-navy rounded-[22px] p-10 md:p-14 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Ready to Join?
                 </h2>
@@ -526,7 +481,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     href="https://go.tampa.dev/slack"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-navy text-white font-semibold rounded-xl hover:bg-navy/80 transition-all border border-white/10"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-navy-light text-white font-semibold rounded-xl hover:bg-navy-light/80 transition-all border border-white/10"
                   >
                     Chat on Slack
                   </a>
@@ -537,7 +492,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Newsletter */}
       <div id="newsletter">
         <NewsletterSignup
           title="Stay in the Loop"
