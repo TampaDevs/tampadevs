@@ -1,3 +1,13 @@
 @import "tailwindcss";
 @import "@tampadevs/tailwind-preset/theme.css";
 @plugin "@tailwindcss/typography";
+
+@media (prefers-color-scheme: dark) {
+  .td-header .td-logo__tampa {
+    color: white !important;
+  }
+}
+
+.td-newsletter__footer {
+  display: none;
+}
