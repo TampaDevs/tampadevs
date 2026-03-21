@@ -7,7 +7,7 @@ export interface Talk {
   intro: string;
   heroImage?: string;
   youtubeId?: string;
-  meetupFlyer?: string;
+  eventImage?: string;
   canonical?: string;
 }
 
@@ -36,7 +36,7 @@ const talks: Talk[] = Object.entries(modules).flatMap(([filepath, mod]) => {
     intro: meta.intro ?? "",
     heroImage: meta.heroImage,
     youtubeId: meta.youtubeId,
-    meetupFlyer: meta.meetupFlyer,
+    eventImage: meta.eventImage,
     canonical: meta.canonical,
   }];
 });

@@ -56,9 +56,9 @@ function TalkCard({ talk }: { talk: Talk }) {
               </div>
             </div>
           </>
-        ) : talk.meetupFlyer ? (
+        ) : talk.eventImage ? (
           <img
-            src={talk.meetupFlyer}
+            src={talk.eventImage}
             alt=""
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />

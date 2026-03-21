@@ -26,7 +26,7 @@ export const meta: Route.MetaFunction = ({ data }) => {
       ? `https://img.youtube.com/vi/${data.talk.youtubeId}/maxresdefault.jpg`
       : data.talk.heroImage
         ? `https://tampadevs.com${data.talk.heroImage}`
-        : data.talk.meetupFlyer,
+        : data.talk.eventImage,
   });
 };
 
