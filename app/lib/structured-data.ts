@@ -53,6 +53,59 @@ export function generateFAQSchema(
   };
 }
 
+export function generateEventSchema(event: {
+  title: string;
+  description?: string;
+  dateTime: string;
+  eventUrl: string;
+  photoUrl?: string | null;
+  isOnline: boolean;
+  venue?: {
+    name?: string;
+    address?: string;
+    city?: string;
+    state?: string;
+  } | null;
+  group: { name: string };
+}) {
+  const location = event.isOnline
+    ? { "@type": "VirtualLocation" as const, url: event.eventUrl }
+    : event.venue
+      ? {
+          "@type": "Place" as const,
+          name: event.venue.name,
+          address: {
+            "@type": "PostalAddress" as const,
+            streetAddress: event.venue.address,
+            addressLocality: event.venue.city,
+            addressRegion: event.venue.state,
+            addressCountry: "US",
+          },
+        }
+      : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.title,
+    startDate: event.dateTime,
+    eventAttendanceMode: event.isOnline
+      ? "https://schema.org/OnlineEventAttendanceMode"
+      : "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    ...(event.description && { description: event.description }),
+    ...(event.photoUrl && { image: event.photoUrl }),
+    ...(location && { location }),
+    url: event.eventUrl,
+    organizer: {
+      "@type": "Organization",
+      name: event.group.name,
+      url: "https://tampadevs.com",
+    },
+    isAccessibleForFree: true,
+  };
+}
+
 export function generateBreadcrumbSchema(
   items: { name: string; url: string }[]
 ) {

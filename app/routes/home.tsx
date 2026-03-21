@@ -3,6 +3,7 @@ import { generateMetaTags } from "~/lib/seo";
 import {
   generateOrganizationSchema,
   generateWebsiteSchema,
+  generateEventSchema,
 } from "~/lib/structured-data";
 import { StructuredData } from "~/components/StructuredData";
 import { getAllSponsors } from "~/data/sponsors";
@@ -61,6 +62,12 @@ interface NextEvent {
     name: string;
     urlname: string;
   };
+  venue?: {
+    name?: string;
+    address?: string;
+    city?: string;
+    state?: string;
+  } | null;
 }
 
 export const meta: Route.MetaFunction = () => {
@@ -101,6 +108,7 @@ export async function loader({ context }: Route.LoaderArgs) {
         address: venue ? [venue.name, venue.address, venue.city, venue.state].filter(Boolean).join(", ") : null,
         photoUrl: data.photoUrl,
         group: { name: data.group.name, urlname: data.group.urlname },
+        venue: venue ? { name: venue.name, address: venue.address, city: venue.city, state: venue.state } : null,
       };
     }
     if (groupResult.status === "fulfilled" && groupResult.value.ok) {
@@ -258,7 +266,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <StructuredData
-        data={[generateOrganizationSchema(), generateWebsiteSchema()]}
+        data={[
+          generateOrganizationSchema(),
+          generateWebsiteSchema(),
+          ...(nextEvent ? [generateEventSchema(nextEvent)] : []),
+        ]}
       />
 
       {/* Hero Section with Video Background */}
