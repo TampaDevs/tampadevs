@@ -58,10 +58,10 @@ function TalkCard({ talk }: { talk: Talk }) {
           </>
         ) : talk.meetupFlyer ? (
           <img
-            src={talk.heroImage ? `https://tampadevs.com${talk.heroImage}` : talk.meetupFlyer}
+            src={talk.meetupFlyer}
             alt=""
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          /> 
+          />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <svg
