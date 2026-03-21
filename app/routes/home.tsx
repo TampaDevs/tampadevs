@@ -17,8 +17,38 @@ import {
 import type { Sponsor } from "@tampadevs/react";
 import { Link } from "react-router";
 
-interface EventApiResponse {
-  id: string;
+interface NextEventApiResponse {
+  data: {
+    id: string;
+    title: string;
+    description?: string;
+    dateTime: string;
+    eventUrl: string;
+    rsvpCount: number;
+    photoUrl?: string | null;
+    venue?: {
+      name?: string;
+      address?: string;
+      city?: string;
+      state?: string;
+      isOnline: boolean;
+    } | null;
+    group: {
+      id: string;
+      name: string;
+      urlname: string;
+      photoUrl?: string | null;
+    };
+  };
+}
+
+interface GroupApiResponse {
+  data: {
+    memberCount: number;
+  };
+}
+
+interface NextEvent {
   title: string;
   description?: string;
   dateTime: string;
@@ -30,7 +60,6 @@ interface EventApiResponse {
   group: {
     name: string;
     urlname: string;
-    memberCount?: number;
   };
 }
 
@@ -51,19 +80,32 @@ export async function loader({ context }: Route.LoaderArgs) {
     tier: s.type === "gold" ? "gold" : s.type === "silver" ? "silver" : "community",
   }));
 
-  // Fetch next event from events API
-  let nextEvent: EventApiResponse | null = null;
+  // Fetch next event and member count from API
+  let nextEvent: NextEvent | null = null;
   let memberCount = "3,000+";
   try {
-    const response = await fetch("https://api.tampa.dev/events/next?groups=tampadevs");
-    if (response.ok) {
-      const events: EventApiResponse[] = await response.json();
-      if (events.length > 0) {
-        nextEvent = events[0];
-        if (events[0].group?.memberCount) {
-          memberCount = events[0].group.memberCount.toLocaleString() + "+";
-        }
-      }
+    const [eventResult, groupResult] = await Promise.allSettled([
+      fetch("https://api.tampa.dev/v1/public/groups/tampadevs/next-event"),
+      fetch("https://api.tampa.dev/v1/public/groups/tampadevs"),
+    ]);
+    if (eventResult.status === "fulfilled" && eventResult.value.ok) {
+      const { data }: NextEventApiResponse = await eventResult.value.json();
+      const venue = data.venue;
+      nextEvent = {
+        title: data.title,
+        description: data.description,
+        dateTime: data.dateTime,
+        eventUrl: data.eventUrl,
+        rsvpCount: data.rsvpCount,
+        isOnline: venue?.isOnline ?? false,
+        address: venue ? [venue.name, venue.address, venue.city, venue.state].filter(Boolean).join(", ") : null,
+        photoUrl: data.photoUrl,
+        group: { name: data.group.name, urlname: data.group.urlname },
+      };
+    }
+    if (groupResult.status === "fulfilled" && groupResult.value.ok) {
+      const { data }: GroupApiResponse = await groupResult.value.json();
+      memberCount = data.memberCount.toLocaleString() + "+";
     }
   } catch {
     // Silently fail - we'll just not show the next event

@@ -5,8 +5,31 @@ import { StructuredData } from "~/components/StructuredData";
 import { EventCard } from "@tampadevs/react";
 import { Link } from "react-router";
 
-interface EventApiResponse {
-  id: string;
+interface NextEventApiResponse {
+  data: {
+    id: string;
+    title: string;
+    description?: string;
+    dateTime: string;
+    eventUrl: string;
+    rsvpCount: number;
+    photoUrl?: string | null;
+    venue?: {
+      name?: string;
+      address?: string;
+      city?: string;
+      state?: string;
+      isOnline: boolean;
+    } | null;
+    group: {
+      id: string;
+      name: string;
+      urlname: string;
+    };
+  };
+}
+
+interface NextEvent {
   title: string;
   description?: string;
   dateTime: string;
@@ -18,7 +41,6 @@ interface EventApiResponse {
   group: {
     name: string;
     urlname: string;
-    memberCount?: number;
   };
 }
 
@@ -32,16 +54,25 @@ export const meta: Route.MetaFunction = () => {
 };
 
 export async function loader() {
-  let nextEvent: EventApiResponse | null = null;
+  let nextEvent: NextEvent | null = null;
   try {
     const response = await fetch(
-      "https://api.tampa.dev/events/next?groups=tampadevs"
+      "https://api.tampa.dev/v1/public/groups/tampadevs/next-event"
     );
     if (response.ok) {
-      const events: EventApiResponse[] = await response.json();
-      if (events.length > 0) {
-        nextEvent = events[0];
-      }
+      const { data }: NextEventApiResponse = await response.json();
+      const venue = data.venue;
+      nextEvent = {
+        title: data.title,
+        description: data.description,
+        dateTime: data.dateTime,
+        eventUrl: data.eventUrl,
+        rsvpCount: data.rsvpCount,
+        isOnline: venue?.isOnline ?? false,
+        address: venue ? [venue.name, venue.address, venue.city, venue.state].filter(Boolean).join(", ") : null,
+        photoUrl: data.photoUrl,
+        group: { name: data.group.name, urlname: data.group.urlname },
+      };
     }
   } catch {
     // Silently fail - we'll just not show the next event
