@@ -59,15 +59,14 @@ export async function loader({ context }: Route.LoaderArgs) {
     title: event.title,
   }));
 
-  // Fetch member count from events API
+  // Fetch member count from group API
   let memberCount = "3,000+"; // Fallback
   try {
-    const response = await fetch("https://api.tampa.dev/events/next?groups=tampadevs");
+    const response = await fetch("https://api.tampa.dev/v1/public/groups/tampadevs");
     if (response.ok) {
-      const events = await response.json();
-      if (events.length > 0 && events[0].group?.memberCount) {
-        const count = events[0].group.memberCount;
-        memberCount = count.toLocaleString() + "+";
+      const json = await response.json() as { data: { memberCount: number } };
+      if (json.data?.memberCount) {
+        memberCount = json.data.memberCount.toLocaleString() + "+";
       }
     }
   } catch {
