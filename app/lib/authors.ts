@@ -10,6 +10,8 @@ export interface Author {
 const authorImages: Record<string, string> = {
   "Vincent Tang": "/images/people/vincent_tang.webp",
   "Charlton Trezevant": "/images/people/charlton_trezevant.webp",
+  "Kevin Brown": "/images/people/kevin_brown.webp",
+  "Josef Sieber": "/images/people/josef_sieber.webp",
   "Justin Herron": "/images/people/justin_herron.webp",
   "Ryan Harrigan": "/images/people/ryan_harrigan.webp",
   "Lydia Hendriks": "/images/people/lydia_hendriks.webp",
