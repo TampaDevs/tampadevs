@@ -16,6 +16,7 @@ const authorImages: Record<string, string> = {
   "Ryan Harrigan": "/images/people/ryan_harrigan.webp",
   "Lydia Hendriks": "/images/people/lydia_hendriks.webp",
   "Tampa Devs": "/images/people/no-avatar.webp",
+  "Ammar Yusuf": "/images/people/ammar_yusuf.webp",
 };
 
 const defaultImage = "/images/people/no-avatar.webp";
