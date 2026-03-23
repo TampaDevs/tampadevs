@@ -28,7 +28,7 @@ export const people: TeamMember[] = [
     name: "Josef Sieber",
     title: "Program Manager",
     bio: "Data Scientist, but still a big fan of gut hunches. Ad Hoc Statistician.",
-    image: "josef_siber.jpg",
+    image: "josef_sieber.webp",
     teams: ["Team Core", "Organizers"],
     href: {
       type: "LinkedIn",
