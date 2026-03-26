@@ -9,6 +9,8 @@ export interface Author {
 // Map of author names to their image files
 const authorImages: Record<string, string> = {
   "Vincent Tang": "/images/people/vincent_tang.webp",
+  "Ammar Yusuf": "/images/people/ammar_yusuf.webp",
+  "Matt Yorkgitis": "/images/people/matt_yorkgitis.webp",
   "Charlton Trezevant": "/images/people/charlton_trezevant.webp",
   "Kevin Brown": "/images/people/kevin_brown.webp",
   "Josef Sieber": "/images/people/josef_sieber.webp",
@@ -16,7 +18,6 @@ const authorImages: Record<string, string> = {
   "Ryan Harrigan": "/images/people/ryan_harrigan.webp",
   "Lydia Hendriks": "/images/people/lydia_hendriks.webp",
   "Tampa Devs": "/images/people/no-avatar.webp",
-  "Ammar Yusuf": "/images/people/ammar_yusuf.webp",
 };
 
 const defaultImage = "/images/people/no-avatar.webp";
