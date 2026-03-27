@@ -265,19 +265,20 @@ export default function CloudProject() {
                 baremetal and hyperscaler computing technology through skilled
                 volunteers and open-source software.
               </p>
-
               <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/volunteer"
+                <a
+                  href="https://cloud.ontampa.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
                 >
-                  Volunteer for the Cloud Project
-                </Link>
+                  Login to the Cloud
+                </a>
                 <Link
-                  to="/blog/2024/the-public-cloud-project"
+                  to="/volunteer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-all"
                 >
-                  Read the Full Story
+                  Volunteer for the Cloud Project
                 </Link>
               </div>
             </div>
@@ -310,13 +311,13 @@ export default function CloudProject() {
         <section className="bg-navy py-16 md:py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl" />
-
+ 
           <div className="relative container mx-auto px-6 max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Bridging the Digital Divide
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-16">
                 Students and educators at public schools and universities often
                 face budget constraints, lengthy procurement processes, and
                 limited access to the computing resources they need. The Tampa
@@ -324,6 +325,12 @@ export default function CloudProject() {
                 students and organizations immediate, free access to run virtual
                 machines, test code, and work on real infrastructure projects.
               </p>
+              <Link
+                to="/blog/2024/the-public-cloud-project"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-all"
+              >
+                Read the Full Story
+              </Link>
             </div>
           </div>
         </section>

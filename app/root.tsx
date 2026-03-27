@@ -12,12 +12,12 @@ import "./app.css";
 
 const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Events", href: "https://tampa.dev/groups/tampadevs", external: true },
   { label: "Blog", href: "/blog" },
+  { label: "Cloud", href: "/cloud-project" },
+  { label: "Events", href: "https://tampa.dev/groups/tampadevs", external: true },
   { label: "Talks", href: "/talks" },
   { label: "Slack", href: "https://go.tampa.dev/slack", external: true },
   { label: "Sponsor", href: "/partnership" },
-  { label: "Cloud Console", href: "/cloud" },
 ];
 
 // Social icon SVGs
@@ -41,7 +41,7 @@ const TwitterIcon = () => (
 
 const navActions = [
   { label: "", href: "https://github.com/TampaDevs", external: true, icon: <GitHubIcon /> },
-  { label: "", href: "https://www.linkedin.com/company/tampa-devs", external: true, icon: <LinkedInIcon /> },
+  { label: "", href: "https://www.linkedin.com/company/tampadevs", external: true, icon: <LinkedInIcon /> },
   { label: "", href: "https://twitter.com/tampadevs", external: true, icon: <TwitterIcon /> },
 ];
 

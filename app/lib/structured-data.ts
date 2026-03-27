@@ -9,7 +9,7 @@ export function generateOrganizationSchema() {
       "Tampa Devs is a 501(c)(3) nonprofit technology community in Tampa Bay, Florida, connecting software developers, engineers, designers, and tech professionals through free events, workshops, and mentorship programs.",
     sameAs: [
       "https://twitter.com/tampadevs",
-      "https://www.linkedin.com/company/tampa-devs",
+      "https://www.linkedin.com/company/tampadevs",
       "https://github.com/TampaDevs",
       "https://www.meetup.com/tampa-devs",
     ],
