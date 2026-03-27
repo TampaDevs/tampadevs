@@ -17,6 +17,7 @@ const navLinks = [
   { label: "Talks", href: "/talks" },
   { label: "Slack", href: "https://go.tampa.dev/slack", external: true },
   { label: "Sponsor", href: "/partnership" },
+  { label: "Cloud Console", href: "/cloud" },
 ];
 
 // Social icon SVGs
@@ -77,7 +78,7 @@ const footerLinkGroups = [
 
 const footerSocials = [
   { name: "GitHub", href: "https://github.com/TampaDevs", icon: "github" as const },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampa-devs", icon: "linkedin" as const },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampadevs", icon: "linkedin" as const },
   { name: "Twitter", href: "https://twitter.com/tampadevs", icon: "twitter" as const },
 ];
 
