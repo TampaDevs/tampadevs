@@ -12,8 +12,9 @@ import "./app.css";
 
 const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Events", href: "https://tampa.dev/groups/tampadevs", external: true },
   { label: "Blog", href: "/blog" },
+  { label: "Cloud", href: "/cloud-project" },
+  { label: "Events", href: "https://tampa.dev/groups/tampadevs", external: true },
   { label: "Talks", href: "/talks" },
   { label: "Slack", href: "https://go.tampa.dev/slack", external: true },
   { label: "Sponsor", href: "/partnership" },
@@ -40,7 +41,7 @@ const TwitterIcon = () => (
 
 const navActions = [
   { label: "", href: "https://github.com/TampaDevs", external: true, icon: <GitHubIcon /> },
-  { label: "", href: "https://www.linkedin.com/company/tampa-devs", external: true, icon: <LinkedInIcon /> },
+  { label: "", href: "https://www.linkedin.com/company/tampadevs", external: true, icon: <LinkedInIcon /> },
   { label: "", href: "https://twitter.com/tampadevs", external: true, icon: <TwitterIcon /> },
 ];
 
@@ -77,7 +78,7 @@ const footerLinkGroups = [
 
 const footerSocials = [
   { name: "GitHub", href: "https://github.com/TampaDevs", icon: "github" as const },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampa-devs", icon: "linkedin" as const },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/tampadevs", icon: "linkedin" as const },
   { name: "Twitter", href: "https://twitter.com/tampadevs", icon: "twitter" as const },
 ];
 
