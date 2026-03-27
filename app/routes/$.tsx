@@ -22,7 +22,7 @@ const redirects: Record<string, string> = {
   "/speakers": "/speak",
   "/mentorship": "https://go.tampa.dev/mentorship",
   "/talent": "https://talent.tampa.dev/",
-  "/cloud": "https://cloud.tampa.dev/",
+  "/cloud": "https://cloud.ontampa.dev/",
 
   // Legacy blog URLs (without year prefix)
   "/blog/our-first-event": "/blog/2021/our-first-event",
