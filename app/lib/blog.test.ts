@@ -5,7 +5,6 @@ describe("blog utilities", () => {
   describe("getAllPosts", () => {
     it("returns posts sorted by date descending", () => {
       const posts = getAllPosts();
-
       for (let i = 1; i < posts.length; i++) {
         const prevDate = new Date(posts[i - 1].date).getTime();
         const currDate = new Date(posts[i].date).getTime();
@@ -13,24 +12,36 @@ describe("blog utilities", () => {
       }
     });
 
-    it("returns all posts", () => {
+    it("returns all posts with required fields", () => {
       const posts = getAllPosts();
       expect(posts.length).toBeGreaterThan(0);
+      for (const post of posts) {
+        expect(post.slug).toBeTruthy();
+        expect(post.year).toBeTruthy();
+        expect(post.title).toBeTruthy();
+        expect(post.author).toBeTruthy();
+        expect(post.date).toBeTruthy();
+      }
     });
   });
 
   describe("getPostsByYear", () => {
     it("filters posts by year", () => {
-      const posts2021 = getPostsByYear("2021");
-      expect(posts2021.every((p) => p.year === "2021")).toBe(true);
+      const posts = getAllPosts();
+      const years = [...new Set(posts.map((p) => p.year))];
+      const year = years[0];
+      const byYear = getPostsByYear(year);
+      expect(byYear.every((p) => p.year === year)).toBe(true);
+      expect(byYear.length).toBeGreaterThan(0);
     });
 
     it("returns sorted results", () => {
-      const posts = getPostsByYear("2022");
-
-      for (let i = 1; i < posts.length; i++) {
-        const prevDate = new Date(posts[i - 1].date).getTime();
-        const currDate = new Date(posts[i].date).getTime();
+      const posts = getAllPosts();
+      const years = [...new Set(posts.map((p) => p.year))];
+      const byYear = getPostsByYear(years[0]);
+      for (let i = 1; i < byYear.length; i++) {
+        const prevDate = new Date(byYear[i - 1].date).getTime();
+        const currDate = new Date(byYear[i].date).getTime();
         expect(prevDate).toBeGreaterThanOrEqual(currDate);
       }
     });
@@ -42,34 +53,44 @@ describe("blog utilities", () => {
   });
 
   describe("getPost", () => {
-    it("finds post by year and slug", () => {
-      const post = getPost("2021", "our-first-event");
+    it("finds a post by year and slug", () => {
+      const all = getAllPosts();
+      const sample = all[0];
+
+      const post = getPost(sample.year, sample.slug);
       expect(post).toBeDefined();
-      expect(post?.title).toBe("Our first event!");
+      expect(post?.slug).toBe(sample.slug);
+      expect(post?.year).toBe(sample.year);
     });
 
     it("returns undefined for non-existent post", () => {
       const post = getPost("2021", "non-existent-post");
       expect(post).toBeUndefined();
     });
+
+    it("returns a post with all required fields populated", () => {
+      const all = getAllPosts();
+      const sample = all[0];
+      const post = getPost(sample.year, sample.slug);
+
+      expect(post?.title).toBeTruthy();
+      expect(post?.author).toBeTruthy();
+      expect(post?.date).toBeTruthy();
+      expect(post?.intro).toBeTruthy();
+    });
   });
 
   describe("formatDate", () => {
     it("formats date with month name, day, and year", () => {
       const formatted = formatDate("2024-01-15");
-      // Check format pattern (month name, day, year)
       expect(formatted).toMatch(/^[A-Z][a-z]+ \d{1,2}, \d{4}$/);
       expect(formatted).toContain("2024");
       expect(formatted).toContain("January");
     });
 
-    it("returns consistent format for different dates", () => {
-      const formatted1 = formatDate("2023-06-01");
-      const formatted2 = formatDate("2022-12-15");
-
-      // Both should follow same format
-      expect(formatted1).toMatch(/^[A-Z][a-z]+ \d{1,2}, \d{4}$/);
-      expect(formatted2).toMatch(/^[A-Z][a-z]+ \d{1,2}, \d{4}$/);
+    it("formats different dates correctly", () => {
+      expect(formatDate("2023-06-01")).toContain("June");
+      expect(formatDate("2022-12-15")).toContain("December");
     });
   });
 });
