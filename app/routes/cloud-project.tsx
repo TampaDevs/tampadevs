@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { Route } from "./+types/cloud-project";
 import { generateMetaTags } from "~/lib/seo";
 import { generateBreadcrumbSchema } from "~/lib/structured-data";
@@ -213,6 +214,53 @@ const cloudSponsors: Sponsor[] = [
   },
 ];
 
+function SignInButton() {
+  const [svgContent, setSvgContent] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("https://api.tampa.dev/assets/signin-button.svg")
+      .then((res) => res.text())
+      .then((text) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "image/svg+xml");
+        doc.querySelectorAll("image").forEach((el) => el.remove());
+        const groups = doc.querySelectorAll("g");
+        if (groups.length > 0) groups[0].remove();
+        const svg = doc.documentElement;
+        svg.setAttribute("height", "58");
+        svg.setAttribute("width", "auto");
+        svg.style.height = "58px";
+        svg.style.width = "auto";
+        const modified = new XMLSerializer().serializeToString(svg);
+        setSvgContent(modified);
+      })
+      .catch(() => setSvgContent(null));
+  }, []);
+
+  return (
+    <a
+      href="https://cloud.ontampa.dev"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex rounded-lg overflow-hidden hover:opacity-90 hover:scale-[1.02] transition-all duration-200"
+    >
+      {svgContent ? (
+        <span
+          className="inline-flex items-center"
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+      ) : (
+        // Fallback to img while loading
+        <img
+          src="https://api.tampa.dev/assets/signin-button.svg?theme=dark"
+          alt="Sign in with Tampa.dev"
+          className="h-[58px] w-auto"
+        />
+      )}
+    </a>
+  );
+}
+
 export default function CloudProject() {
   return (
     <>
@@ -266,20 +314,13 @@ export default function CloudProject() {
                 volunteers and open-source software.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://cloud.ontampa.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light transition-all shadow-lg shadow-coral/25"
-                >
-                  Login to the Cloud
-                </a>
                 <Link
                   to="/volunteer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-coral text-white font-semibold rounded-lg hover:bg-coral-light hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/25"
                 >
                   Volunteer for the Cloud Project
                 </Link>
+                <SignInButton />
               </div>
             </div>
           </div>
