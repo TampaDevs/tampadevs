@@ -104,6 +104,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="alternate" type="application/rss+xml" title="Tampa Devs Blog" href="https://tampadevs.com/feed.xml" />
         <meta name="theme-color" content="#1C2438" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__td = { writeKey: "oJOsGiurtagTQgr2I6h76CHEJVmHYlWw", context: {} };`,
+          }}
+        />
+        <script src="https://i.tampadevs.com/ajs" async />
         <Meta />
         <Links />
       </head>
