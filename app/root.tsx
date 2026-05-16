@@ -5,7 +5,9 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
+  useLocation,
 } from "react-router";
+import { useEffect, useRef } from "react";
 import type { Route } from "./+types/root";
 import { Header, Footer, Logo, Logo3d } from "@tampadevs/react";
 import "./app.css";
@@ -123,6 +125,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const location = useLocation();
+  // aiden auto-fires the initial page() on SDK load; skip the first render
+  // here so SPA navigations don't double-count.
+  const initialPageRef = useRef(true);
+  useEffect(() => {
+    if (initialPageRef.current) {
+      initialPageRef.current = false;
+      return;
+    }
+    const analytics = (window as unknown as { analytics?: { page?: () => void } }).analytics;
+    analytics?.page?.();
+  }, [location.pathname, location.search]);
+
   return (
     <>
       <Header
